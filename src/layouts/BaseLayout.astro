@@ -1,7 +1,8 @@
 ---
+import '@/styles/safiro.css';
 import Container from '@/components/Container.astro';
 import { Marquee } from '@/components/Marquee';
-import '@/styles/safiro.css';
+import Cursor from '@/components/Cursor';
 ---
 <html lang="es">
   <head>
@@ -12,30 +13,6 @@ import '@/styles/safiro.css';
     <title>Javier Diaz — Ingeniería & Diseño</title>
   </head>
   <body class="antialiased bg-[#100F0F]">
-    <Marquee className="-rotate-3 absolute top-0 mt-12 w-full -translate-y-8 bg-[#FFB3C0]" client:idle>
-      <span class="text-lg uppercase font-bold tracking-widest">Next.js ✦</span>
-      <span class="text-lg uppercase font-bold tracking-widest">GraphQL ✦</span>
-      <span class="text-lg uppercase font-bold tracking-widest">Strapi ✦</span>
-      <span class="text-lg uppercase font-bold tracking-widest">React Native ✦</span>
-      <span class="text-lg uppercase font-bold tracking-widest">Tailwind ✦</span>
-      <span class="text-lg uppercase font-bold tracking-widest">HTML/CSS ✦</span>
-      <span class="text-lg uppercase font-bold tracking-widest">JavaScript ✦</span>
-      <span class="text-lg uppercase font-bold tracking-widest">Go ✦</span>
-      <span class="text-lg uppercase font-bold tracking-widest">GraphQL ✦</span>
-      <span class="text-lg uppercase font-bold tracking-widest">Strapi ✦</span>
-      <span class="text-lg uppercase font-bold tracking-widest">React Native ✦</span>
-      <span class="text-lg uppercase font-bold tracking-widest">Tailwind ✦</span>
-    </Marquee>
-    <Marquee className="rotate-3 -translate-y-6 absolute top-0 mt-12 w-full bg-[#FFA36F]" client:idle>
-      <span class="text-lg uppercase font-bold tracking-widest">Disponible para proyectos ✦</span>
-      <span class="text-lg uppercase font-bold tracking-widest">Desarrollo frontend y backend ✦</span>
-      <span class="text-lg uppercase font-bold tracking-widest">Interfaces de usuario ✦</span>
-      <span class="text-lg uppercase font-bold tracking-widest">Software ✦</span>
-      <span class="text-lg uppercase font-bold tracking-widest">Disponible para proyectos ✦</span>
-      <span class="text-lg uppercase font-bold tracking-widest">Diseño web ✦</span>
-      <span class="text-lg uppercase font-bold tracking-widest">Productos digitales ✦</span>
-      <span class="text-lg uppercase font-bold tracking-widest">Aplicaciones móviles ✦</span>
-    </Marquee>
     <main>
       <slot />
     </main>
@@ -56,5 +33,30 @@ import '@/styles/safiro.css';
         <span class="absolute -right-16 -top-[12rem] mb-0 hidden font-mono text-[50rem] text-black leading-none opacity-5 lg:flex">*</span>
       </Container>
     </footer>
+    <Marquee className="-rotate-6 absolute top-0 z-0 mt-6 w-full -translate-y-8 bg-[#FFA36F]" client:idle>
+      <span class="text-lg uppercase font-bold tracking-widest ml-1">Next.js ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest ml-1">GraphQL ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest ml-1">Strapi ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest ml-1">React Native ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest ml-1">Tailwind ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest ml-1">HTML/CSS ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest ml-1">JavaScript ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest ml-1">Go ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest ml-1">GraphQL ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest ml-1">Strapi ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest ml-1">React Native ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest ml-1">Tailwind ✦</span>
+    </Marquee>
+    <Marquee className="rotate-3 -translate-y-6 absolute z-0 top-0 mt-6 w-full bg-[#FFB3C0]" client:idle>
+      <span class="text-lg uppercase font-bold tracking-widest ml-1">Disponible para proyectos ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest ml-1">Desarrollo frontend y backend ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest ml-1">Interfaces de usuario ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest ml-1">Software ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest ml-1">Disponible para proyectos ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest ml-1">Diseño web ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest ml-1">Productos digitales ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest ml-1">Aplicaciones móviles ✦</span>
+    </Marquee>
+    <Cursor client:load />
   </body>
 </html>
