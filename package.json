@@ -1,7 +1,7 @@
 {
-  "name": "web",
+  "name": "coderdiaz.com",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -11,8 +11,15 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
+    "@astrojs/react": "^3.0.9",
     "astro": "^4.3.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "sharp": "0.33.2",
     "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.18"
   }
 }
