@@ -1,16 +1,73 @@
 ---
-
+import { Image } from 'astro:assets';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Container from '@/components/Container.astro';
+import Project from '@/components/Project.astro';
+import Logotype from '@/assets/images/Logotype.svg';
+import Family from '@/assets/images/Family@2x.jpg';
+import Working from '@/assets/images/Working@2x.jpg';
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <section class="pt-20 pb-12">
+    <Container>
+      <div class="flex flex-col gap-6">
+        <Image src={Logotype} width={36} alt="Sitio web personal de Javier Diaz @coderdiaz" />
+        <div class="flex flex-col gap-3 w-[36rem]">
+          <span class="text-lg text-gray-300">Hola, soy Javier Diaz</span>
+          <div class="relative">
+            <span class="absolute -left-16 top-0 mb-0 hidden font-mono text-[10rem] text-white leading-none opacity-5 lg:flex">*</span>
+            <h1 class="font-display text-white font-medium text-5xl">
+              Creo <span class="text-[#FFA36F]">productos digitales</span>. <span class="text-[#FFB3C0]">Interfaces</span>. Sistemas.
+            </h1>
+          </div>
+          <p class="text-gray-300">
+            Enfocado en construir las mejores soluciones en productos digitales que mejoren la productividad de las personas y sus flujos de trabajo a través de la tecnología y el diseño.
+          </p>
+        </div>
+        <div class="flex gap-4 items-center">
+          <a href="#" class="bg-white font-medium rounded-xl text-black px-4 py-2.5">
+            Agendar una llamada
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+  <section class="py-20">
+    <Container>
+      <div class="grid grid-cols-2 gap-32 items-center">
+        <div class="aspect-square relative">
+          <div class="absolute top-0 bottom-0 left-0 right-0 w-[16rem] z-10 -rotate-6 translate-x-64 translate-y-12">
+            <Image src={Family} alt="De visita por Teotihuacan con mi esposa" />
+          </div>
+          <div class="absolute top-0 bottom-0 left-0 right-0 w-[24rem] z-0 translate-y-44 rotate-3">
+            <Image src={Working} width={480} alt="Javier Diaz trabajando desde su espacio creativo en casa" />
+          </div>
+        </div>
+        <div class="text-white font-medium text-xl flex flex-col gap-5 relative">
+          <p>Soy un freelance trabajando desde la <span class="text-[#FFA36F]">Ciudad de México, México</span>. He invertido los últimos 9 años colaborando con early-startups a desarrollar sus productos tecnológicos, sitios web, apps e interfaces.</p>
+          <span class="absolute -left-16 top-0 mt-20 mb-0 hidden font-mono text-[10rem] text-white leading-none opacity-5 lg:flex">*</span>
+          <p>
+            Uno fuerzas con fundadores y equipos multidiciplinarios para crear las mejores <span class="text-[#FFB3C0]">experiencias digitales</span> para sus usuarios. 
+          </p>
+        </div>
+      </div>
+    </Container>
+  </section>
+  <section class="py-20">
+    <Container>
+      <div class="flex justify-center mb-12">
+        <h2 class="font-display text-4xl text-center text-white text-balance w-96">
+          Experiencias creadas desde 2019
+        </h2>
+      </div>
+      <div class="relative">
+        <div class="sticky top-0 flex flex-col gap-12">
+          <Project />
+          <Project class="top-36"  />
+          <Project class="top-44" />
+        </div>
+      </div>
+    </Container>
+  </section>
+  <section class="py-20 min-h-[60rem]"></section>
+</BaseLayout>
