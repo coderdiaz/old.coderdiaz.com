@@ -3,24 +3,25 @@ import { Image } from 'astro:assets';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Container from '@/components/Container.astro';
 import Project from '@/components/Project.astro';
+import Article from '@/components/Article.astro';
 import Logotype from '@/assets/images/Logotype.svg';
 import Family from '@/assets/images/Family@2x.jpg';
 import Working from '@/assets/images/Working@2x.jpg';
 ---
 <BaseLayout>
-  <section class="pt-20 pb-12">
+  <section class="pt-48 pb-12">
     <Container>
       <div class="flex flex-col gap-6">
         <Image src={Logotype} width={36} alt="Sitio web personal de Javier Diaz @coderdiaz" />
-        <div class="flex flex-col gap-3 w-[36rem]">
+        <div class="flex flex-col gap-3 ">
           <span class="text-lg text-gray-300">Hola, soy Javier Diaz</span>
-          <div class="relative">
+          <div class="relative w-[52rem]">
             <span class="absolute -left-16 top-0 mb-0 hidden font-mono text-[10rem] text-white leading-none opacity-5 lg:flex">*</span>
-            <h1 class="font-display text-white font-medium text-5xl">
+            <h1 class="font-display text-white font-medium text-6xl">
               Creo <span class="text-[#FFA36F]">productos digitales</span>. <span class="text-[#FFB3C0]">Interfaces</span>. Sistemas.
             </h1>
           </div>
-          <p class="text-gray-300">
+          <p class="text-gray-300 text-lg w-[36rem]">
             Enfocado en construir las mejores soluciones en productos digitales que mejoren la productividad de las personas y sus flujos de trabajo a través de la tecnología y el diseño.
           </p>
         </div>
@@ -44,10 +45,10 @@ import Working from '@/assets/images/Working@2x.jpg';
           </div>
         </div>
         <div class="text-white font-medium text-xl flex flex-col gap-5 relative">
-          <p>Soy un freelance trabajando desde la <span class="text-[#FFA36F]">Ciudad de México, México</span>. He invertido los últimos 9 años colaborando con early-startups a desarrollar sus productos tecnológicos, sitios web, apps e interfaces.</p>
+          <p>Soy un freelance multidiciplinario trabajando desde la <span class="text-[#FFA36F]">Ciudad de México, México</span>. He invertido los últimos 9+ años colaborando con early-startups a desarrollar sus productos tecnológicos, sitios web, apps e interfaces.</p>
           <span class="absolute -left-16 top-0 mt-20 mb-0 hidden font-mono text-[10rem] text-white leading-none opacity-5 lg:flex">*</span>
           <p>
-            Uno fuerzas con fundadores y equipos multidiciplinarios para crear las mejores <span class="text-[#FFB3C0]">experiencias digitales</span> para sus usuarios. 
+            Uno fuerzas con fundadores y equipos de alto rendimiento para crear las mejores <span class="text-[#FFB3C0]">experiencias digitales</span> para sus usuarios. 
           </p>
         </div>
       </div>
@@ -69,5 +70,42 @@ import Working from '@/assets/images/Working@2x.jpg';
       </div>
     </Container>
   </section>
-  <section class="py-20 min-h-[60rem]"></section>
+  <section class="pt-10 pb-40">
+    <Container>
+      <div class="grid grid-cols-6">
+        <div class="col-span-2">
+          <h2 class="text-white font-display text-4xl">Magazine</h2>
+        </div>
+        <div class="col-span-4 flex flex-col gap-14">
+          <Article />
+          <Article />
+          <Article />
+        </div>
+      </div>
+    </Container>
+  </section>
+  <section class="py-20 bg-[#FFA36F] rounded-t-3xl">
+    <Container>
+      <div class="grid grid-cols-2">
+        <div class="flex flex-col gap-4 text-white">
+          <span class="font-medium text-lg text-black">Servicios</span>
+          <h2 class="text-5xl font-display text-orange-950/80 w-[28rem] mb-6">
+            Llevemos tu <span class="text-black">idea</span> de <span class="text-black">0 → 1</span>
+          </h2>
+          <a href="#" class="border-2 border-black w-max text-black rounded-full text-xl px-6 py-3 hover:bg-white transition-colors duration-300">
+            hola@coderdiaz.com
+          </a>
+        </div>
+        <div class="flex flex-col tezt-white">
+          <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Aplicaciones móviles</span>
+          <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Diseño web</span>
+          <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Interfaces de usuario</span>
+          <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Experiencia de usuario</span>
+          <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Diseño visual</span>
+          <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Desarrollo Frontend</span>
+          <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Desarrollo Backend</span>
+        </div>
+      </div>
+    </Container>
+  </section>
 </BaseLayout>

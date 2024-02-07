@@ -1,4 +1,6 @@
 ---
+import Container from '@/components/Container.astro';
+import { Marquee } from '@/components/Marquee';
 import '@/styles/safiro.css';
 ---
 <html lang="es">
@@ -10,8 +12,49 @@ import '@/styles/safiro.css';
     <title>Javier Diaz — Ingeniería & Diseño</title>
   </head>
   <body class="antialiased bg-[#100F0F]">
+    <Marquee className="-rotate-3 absolute top-0 mt-12 w-full -translate-y-8 bg-[#FFB3C0]" client:idle>
+      <span class="text-lg uppercase font-bold tracking-widest">Next.js ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest">GraphQL ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest">Strapi ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest">React Native ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest">Tailwind ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest">HTML/CSS ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest">JavaScript ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest">Go ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest">GraphQL ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest">Strapi ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest">React Native ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest">Tailwind ✦</span>
+    </Marquee>
+    <Marquee className="rotate-3 -translate-y-6 absolute top-0 mt-12 w-full bg-[#FFA36F]" client:idle>
+      <span class="text-lg uppercase font-bold tracking-widest">Disponible para proyectos ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest">Desarrollo frontend y backend ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest">Interfaces de usuario ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest">Software ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest">Disponible para proyectos ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest">Diseño web ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest">Productos digitales ✦</span>
+      <span class="text-lg uppercase font-bold tracking-widest">Aplicaciones móviles ✦</span>
+    </Marquee>
     <main>
       <slot />
     </main>
+    <footer class="bg-[#FFA36F] py-20 overflow-hidden">
+      <Container class="relative">
+        <span class="font-display mb-6 inline-block opacity-60 text-lg">Javier Diaz — Ingeniería y diseño</span>
+        <div class="flex gap-6 items-center mb-3">
+          <a class="font-semibold font-mono" href="#">Sobre mí</a>
+          <a class="font-semibold font-mono" href="#">Contacto</a>
+          <a class="font-semibold font-mono" href="#">Mis herramientas</a>
+        </div>
+        <div class="flex gap-6 items-center mb-12">
+          <a class="font-semibold font-mono" href="#">x.com/coderdiaz</a>
+          <a class="font-semibold font-mono" href="#">layers.to/coderdiaz</a>
+          <a class="font-semibold font-mono" href="#">read.cv/coderdiaz</a>
+        </div>
+        <span class="inline-block">&copy; Since 2015.</span>
+        <span class="absolute -right-16 -top-[20rem] mb-0 hidden font-mono text-[50rem] text-black leading-none opacity-5 lg:flex">*</span>
+      </Container>
+    </footer>
   </body>
 </html>
