@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+import Main from '@/assets/images/project/Main@2x.png';
+import Square from '@/assets/images/project/Square@2x.png';
+import Secondary from '@/assets/images/project/Secondary@2x.png';
+import Tertiary from '@/assets/images/project/Tertiary@2x.png';
+import { cn } from '@/lib/utils';
+
+type Props = {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+<div class={cn('sticky top-24', className)}>
+  <article class="flex flex-col gap-1.5 bg-white shadow-sm p-1.5 rounded-2xl overflow-hidden">
+    <div class="flex justify-between items-center px-4 py-2 bg-[#FFA36F]/75 rounded-t-xl">
+      <div class="w-[6rem] text-left text-sm flex gap-2 items-center">
+        <span>Apps</span>
+        <span class="w-1 h-1 rounded-full bg-black/40" />
+        <span>Diseño</span>
+      </div>
+      <h3 class="font-display text-lg tracking-tight">Academia de baile ARIA</h3>
+      <span class="w-[6rem] text-right text-sm">2023</span>
+    </div>
+    <div class="h-[30rem] grid grid-cols-2 gap-1.5">
+      <div class="rounded-2xl overflow-hidden h-full">
+        <Image class="object-cover object-top w-full h-full rounded-xl" src={Main} alt="" />
+      </div>
+      <div class="flex flex-col gap-1.5 min-h-full">
+        <div class="flex gap-1.5 h-56">
+          <div class="relative overflow-hidden w-64 aspect-square flex-shrink-0 rounded-2xl">
+            <Image class="object-cover w-full h-full" src={Square} alt="" />
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <a href="#" class="text-lg h-full bg-[#FFA36F]/75 text-black font-medium text-center px-4 py-3 rounded-2xl flex items-center justify-center">
+              Ir al proyecto
+            </a>
+            <div class="relative h-full overflow-hidden rounded-2xl">
+              <Image class="object-cover w-full h-full" src={Tertiary} alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden h-full">
+          <Image class="object-cover object-top w-full h-full" src={Secondary} alt="" />
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
