@@ -7,7 +7,7 @@ const { item } = Astro.props;
 ---
 <article>
   <a href={`/posts/${item.slug}/`} class="group">
-    <div class="flex gap-6 justify-start group-hover:bg-white/5 group-hover:ring-[2rem] rounded-xl ring-white/5 transition-all">
+    <div class="flex gap-8 justify-start group-hover:bg-white/5 group-hover:ring-[2rem] rounded-xl ring-white/5 transition-all">
       <div class="flex flex-col gap-4 w-full">
         <div class="flex flex-col text-white gap-1">
           <time class="font-medium text-gray-400" datetime={item.data.publishedAt}>
@@ -17,7 +17,7 @@ const { item } = Astro.props;
               day: 'numeric',
           })}
           </time>
-          <h3 class="text-2xl text-balance">{item.data.title}</h3>
+          <h3 class="text-2xl text-pretty">{item.data.title}</h3>
         </div>
         <div class="flex gap-3 flex-wrapitems-center text-white">
           {item.data.tags.map((tag: string) => (
