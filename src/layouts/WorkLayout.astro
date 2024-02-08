@@ -1,0 +1,77 @@
+---
+import '@/styles/geist.css';
+import '@/styles/safiro.css';
+import Container from '@/components/Container.astro';
+import Cursor from '@/components/Cursor';
+import { Image } from 'astro:assets';
+
+const { entry } = Astro.props;
+console.log(entry)
+---
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{entry.data.client} — Javier Diaz: Ingeniería & Diseño</title>
+  </head>
+  <body class="antialiased bg-[#100F0F]">
+    <main>
+      <section class="py-20">
+        <Container class="max-w-screen-lg">
+          <article>
+            <div class="flex flex-col gap-3 text-white md:px-20">
+              <span class="text-lg text-[#FFA36F]">{entry.data.client}</span>
+              <h1 class="text-4xl font-display text-pretty">{entry.data.title}</h1>
+            </div>
+            <div class="w-full h-full min-h-[28rem] bg-white my-8 rounded-2xl overflow-hidden">
+              <Image class="object-cover" src={entry.data.featuredImage} alt="" />
+            </div>
+            <div class="md:px-20 grid grid-cols-7">
+              <div class="col-span-2">
+                <div class="flex flex-col gap-6">
+                  <div class="flex flex-col gap-2 text-white text-lg">
+                    <span class="text-stone-500">Año</span>
+                    <span class="font-medium">{entry.data.year}</span>
+                  </div>
+                  <div class="flex flex-col gap-2 text-white text-lg">
+                    <span class="text-stone-500">Servicios</span>
+                    <div class="flex flex-col gap-1">
+                      {entry.data.services.map((service: string) => (
+                        <span class="font-medium">{service}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-span-5">
+                <div class="prose prose-invert prose-stone">
+                  <slot />
+                </div>
+              </div>
+            </div>
+          </article>
+        </Container>
+      </section>
+    </main>
+    <footer id="footer" class="bg-[#FFA36F] py-20 overflow-hidden">
+      <Container class="relative">
+        <span class="font-display mb-6 inline-block opacity-60 text-lg">Javier Diaz — Ingeniería y diseño</span>
+        <div class="flex flex-wrap gap-y-3 md:gap-y-6 gap-6 items-center mb-6 md:mb-3">
+          <a class="font-semibold font-mono" href="#">Sobre mí</a>
+          <a class="font-semibold font-mono" href="#">Contacto</a>
+          <a class="font-semibold font-mono" href="#">Mis herramientas</a>
+        </div>
+        <div class="flex flex-wrap gap-y-3 md:gap-y-6 gap-6 items-center mb-12">
+          <a class="font-semibold font-mono" href="https://x.com/coderdiaz" rel="noopener noreferrer">x.com/coderdiaz</a>
+          <a class="font-semibold font-mono" href="https://layers.to/coderdiaz" rel="noopener noreferrer">layers.to/coderdiaz</a>
+          <a class="font-semibold font-mono" href="https://read.cv/coderdiaz" rel="noopener noreferrer">read.cv/coderdiaz</a>
+        </div>
+        <span class="inline-block">&copy; Since 2015.</span>
+        <span class="absolute -right-16 -top-[12rem] mb-0 hidden font-mono text-[50rem] text-black leading-none opacity-5 lg:flex">*</span>
+      </Container>
+    </footer>
+    <Cursor client:load />
+  </body>
+</html>

@@ -3,6 +3,7 @@ import '@/styles/geist.css';
 import '@/styles/safiro.css';
 import Container from '@/components/Container.astro';
 import Cursor from '@/components/Cursor';
+import { Marquee, MarqueeReverse } from '@/components/Marquee';
 ---
 <html lang="es">
   <head>
@@ -15,6 +16,56 @@ import Cursor from '@/components/Cursor';
   <body class="antialiased bg-[#100F0F]">
     <main>
       <slot />
+      <section id="services" class="py-36 bg-[#FFA36F] relative">
+        <MarqueeReverse className="absolute top-0 z-0 mt-6 w-full -translate-y-24 bg-blue-500" client:idle>
+          <span class="text-2xl md:text-3xl uppercase font-bold tracking-widest ml-1">Next.js ✦</span>
+          <span class="text-2xl md:text-3xl uppercase font-bold tracking-widest ml-1">GraphQL ✦</span>
+          <span class="text-2xl md:text-3xl uppercase font-bold tracking-widest ml-1">Strapi ✦</span>
+          <span class="text-2xl md:text-3xl uppercase font-bold tracking-widest ml-1">Astro ✦</span>
+          <span class="text-2xl md:text-3xl uppercase font-bold tracking-widest ml-1">React Native ✦</span>
+          <span class="text-2xl md:text-3xl uppercase font-bold tracking-widest ml-1">Tailwind ✦</span>
+          <span class="text-2xl md:text-3xl uppercase font-bold tracking-widest ml-1">HTML/CSS ✦</span>
+          <span class="text-2xl md:text-3xl uppercase font-bold tracking-widest ml-1">JavaScript ✦</span>
+          <span class="text-2xl md:text-3xl uppercase font-bold tracking-widest ml-1">Go ✦</span>
+          <span class="text-2xl md:text-3xl uppercase font-bold tracking-widest ml-1">GraphQL ✦</span>
+          <span class="text-2xl md:text-3xl uppercase font-bold tracking-widest ml-1">Astro ✦</span>
+          <span class="text-2xl md:text-3xl uppercase font-bold tracking-widest ml-1">Strapi ✦</span>
+          <span class="text-2xl md:text-3xl uppercase font-bold tracking-widest ml-1">React Native ✦</span>
+          <span class="text-2xl md:text-3xl uppercase font-bold tracking-widest ml-1">Tailwind ✦</span>
+        </MarqueeReverse>
+        <Marquee className="-translate-y-8 absolute z-0 top-0 mt-6 w-full bg-[#FFB3C0]" client:idle>
+          <span class="text-2xl md:text-3xl uppercase font-semibold tracking-widest ml-1">Disponible para proyectos ✦</span>
+          <span class="text-2xl md:text-3xl uppercase font-semibold tracking-widest ml-1">Desarrollo frontend y backend ✦</span>
+          <span class="text-2xl md:text-3xl uppercase font-semibold tracking-widest ml-1">Interfaces de usuario ✦</span>
+          <span class="text-2xl md:text-3xl uppercase font-semibold tracking-widest ml-1">Software ✦</span>
+          <span class="text-2xl md:text-3xl uppercase font-semibold tracking-widest ml-1">Disponible para proyectos ✦</span>
+          <span class="text-2xl md:text-3xl uppercase font-semibold tracking-widest ml-1">Diseño web ✦</span>
+          <span class="text-2xl md:text-3xl uppercase font-semibold tracking-widest ml-1">Productos digitales ✦</span>
+          <span class="text-2xl md:text-3xl uppercase font-semibold tracking-widest ml-1">Aplicaciones móviles ✦</span>
+        </Marquee>
+        <Container>
+          <div class="grid md:grid-cols-2 gap-12 md:gap-0 z-10">
+            <div class="flex flex-col gap-4 text-white">
+              <span class="font-medium text-lg text-black">Servicios</span>
+              <h2 class="text-5xl font-display text-orange-950/80 md:w-[20rem] lg:w-[28rem] mb-6">
+                Llevemos tu <span class="text-black">idea</span> de <span class="text-black">0 → 1</span>
+              </h2>
+              <a href="mailto:hola@coderdiaz.com" class="border-2 border-black font-medium w-max text-black rounded-full text-xl px-6 py-3 bg-white hover:bg-white/85 transition-colors duration-300">
+                hola@coderdiaz.com
+              </a>
+            </div>
+            <div class="flex flex-col tezt-white">
+              <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Aplicaciones móviles</span>
+              <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Diseño web</span>
+              <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Interfaces de usuario</span>
+              <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Experiencia de usuario</span>
+              <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Diseño visual</span>
+              <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Desarrollo Frontend</span>
+              <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Desarrollo Backend</span>
+            </div>
+          </div>
+        </Container>
+      </section>
     </main>
     <footer id="footer" class="bg-[#FFA36F] py-20 overflow-hidden">
       <Container class="relative">
