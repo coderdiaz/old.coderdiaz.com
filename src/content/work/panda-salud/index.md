@@ -1,7 +1,8 @@
 ---
-company: Panda Salud
+client: Panda Salud
 title: Acceso a estudios clínicos para tus pacientes de forma sencilla.
 color: '#8DF2CA'
+featuredImage: ./featured.png
 images:
   - './Main@2x.png'
   - './Secondary@2x.png'

@@ -13,12 +13,15 @@ const seoSchema = (image: ImageFunction) => z.object({
 const workCollection = defineCollection({
   type: 'content',
   schema: ({ image }) => z.object({
-    company: z.string(),
+    client: z.string(),
     title: z.string(),
     color: z.string().optional(),
+    featuredImage: image().refine((img) => img.width >= 1080, {
+      message: 'Image must be at least 1080 pixels wide!',
+    }),
     images: z.array(image().refine((img) => img.width >= 560, {
       message: 'Image must be at least 560 pixels wide!',
-    })).optional(),
+    })).min(3),
     year: z.number(),
     services: z.array(z.string()).optional(),
     liveUri: z.string().optional(),

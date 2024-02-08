@@ -1,6 +1,7 @@
 ---
-company: Expanish
+client: Expanish
 title: Rediseño sitio web
+featuredImage: ./featured.png
 images:
   - './Main@2x.png'
   - './Secondary@2x.png'
