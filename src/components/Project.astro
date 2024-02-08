@@ -15,7 +15,7 @@ const { class: className } = Astro.props;
   <a href="#" class="relative w-full h-full bg-white group">
     <article class="flex flex-col gap-1.5 bg-white shadow-sm p-1.5 rounded-2xl overflow-hidden">
       <div class="flex justify-between items-center px-4 py-2 bg-[#FFA36F]/75 rounded-t-xl">
-        <div class="w-[6rem] text-left text-sm flex gap-2 items-center">
+        <div class="hidden w-[6rem] text-left text-sm md:flex gap-2 items-center">
           <span>Apps</span>
           <span class="w-1 h-1 rounded-full bg-black/40" />
           <span>Diseño</span>
@@ -23,11 +23,11 @@ const { class: className } = Astro.props;
         <h3 class="font-display text-lg tracking-tight">Academia de baile ARIA</h3>
         <span class="w-[6rem] text-right text-sm">2023</span>
       </div>
-      <div class="h-[30rem] grid grid-cols-2 gap-1.5 group-hover:opacity-50 transition-opacity">
-        <div class="rounded-2xl overflow-hidden h-full">
+      <div class="h-[30rem] grid md:grid-cols-2 gap-1.5 group-hover:opacity-50 transition-opacity">
+        <div class="hidden md:block rounded-2xl overflow-hidden h-full">
           <Image class="object-cover object-top w-full h-full rounded-xl" src={Main} alt="" />
         </div>
-        <div class="flex flex-col gap-1.5 min-h-full">
+        <div class="flex flex-col gap-1.5 min-h-full w-full">
           <div class="relative h-full overflow-hidden rounded-2xl">
             <Image class="object-cover w-full h-full" src={Secondary} alt="" />
           </div>
