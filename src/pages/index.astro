@@ -4,7 +4,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Container from '@/components/Container.astro';
 import Project from '@/components/Project.astro';
 import Article from '@/components/Article.astro';
-import Logotype from '@/assets/images/Logotype.svg';
+import Logotype from '@/components/Logotype.astro';
 import Family from '@/assets/images/Family@2x.jpg';
 import Working from '@/assets/images/Working@2x.jpg';
 import { Marquee } from '@/components/Marquee';
@@ -17,8 +17,8 @@ const work =  await getCollection('work');
   <section class="pt-32 md:pt-32 pb-12">
     <Container>
       <div class="flex flex-col gap-6">
-        <Image src={Logotype} width={36} alt="Sitio web personal de Javier Diaz @coderdiaz" />
-        <div class="flex flex-col gap-3 ">
+        <Logotype />
+        <div class="flex flex-col gap-3">
           <span class="text-lg text-gray-300">Hola, soy Javier Diaz</span>
           <div class="relative w-full lg:w-[52rem]">
             <span class="absolute -left-16 top-0 mb-0 hidden font-mono text-[10rem] text-white leading-none opacity-5 lg:flex">*</span>
@@ -104,15 +104,15 @@ const work =  await getCollection('work');
       <span class="md:text-lg uppercase font-bold tracking-widest ml-1">React Native ✦</span>
       <span class="md:text-lg uppercase font-bold tracking-widest ml-1">Tailwind ✦</span>
     </Marquee> -->
-    <Marquee className="rotate-1 -translate-y-6 lg:-translate-y-12 absolute z-0 top-0 mt-6 w-full bg-[#FFB3C0]" client:idle>
-      <span class="md:text-xl uppercase font-semibold tracking-widest ml-1">Disponible para proyectos ✦</span>
-      <span class="md:text-xl uppercase font-semibold tracking-widest ml-1">Desarrollo frontend y backend ✦</span>
-      <span class="md:text-xl uppercase font-semibold tracking-widest ml-1">Interfaces de usuario ✦</span>
-      <span class="md:text-xl uppercase font-semibold tracking-widest ml-1">Software ✦</span>
-      <span class="md:text-xl uppercase font-semibold tracking-widest ml-1">Disponible para proyectos ✦</span>
-      <span class="md:text-xl uppercase font-semibold tracking-widest ml-1">Diseño web ✦</span>
-      <span class="md:text-xl uppercase font-semibold tracking-widest ml-1">Productos digitales ✦</span>
-      <span class="md:text-xl uppercase font-semibold tracking-widest ml-1">Aplicaciones móviles ✦</span>
+    <Marquee className="rotate-1 -translate-y-12 absolute z-0 top-0 mt-6 w-full bg-[#FFB3C0]" client:idle>
+      <span class="text-2xl md:text-3xl uppercase font-semibold tracking-widest ml-1">Disponible para proyectos ✦</span>
+      <span class="text-2xl md:text-3xl uppercase font-semibold tracking-widest ml-1">Desarrollo frontend y backend ✦</span>
+      <span class="text-2xl md:text-3xl uppercase font-semibold tracking-widest ml-1">Interfaces de usuario ✦</span>
+      <span class="text-2xl md:text-3xl uppercase font-semibold tracking-widest ml-1">Software ✦</span>
+      <span class="text-2xl md:text-3xl uppercase font-semibold tracking-widest ml-1">Disponible para proyectos ✦</span>
+      <span class="text-2xl md:text-3xl uppercase font-semibold tracking-widest ml-1">Diseño web ✦</span>
+      <span class="text-2xl md:text-3xl uppercase font-semibold tracking-widest ml-1">Productos digitales ✦</span>
+      <span class="text-2xl md:text-3xl uppercase font-semibold tracking-widest ml-1">Aplicaciones móviles ✦</span>
     </Marquee>
     <Container>
       <div class="grid md:grid-cols-2 gap-12 md:gap-0">
