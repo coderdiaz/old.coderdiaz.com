@@ -1,9 +1,12 @@
 ---
 import '@/styles/geist.css';
 import '@/styles/safiro.css';
+import { MoreHorizontalIcon } from 'lucide-react';
 import Container from '@/components/Container.astro';
 import Cursor from '@/components/Cursor';
 import { Marquee, MarqueeReverse } from '@/components/Marquee';
+import { Header } from '@/includes/Header';
+import Logotype from '@/components/Logotype.astro';
 ---
 <html lang="es">
   <head>
@@ -14,6 +17,27 @@ import { Marquee, MarqueeReverse } from '@/components/Marquee';
     <title>Javier Diaz — Ingeniería & Diseño</title>
   </head>
   <body class="antialiased bg-[#100F0F]">
+    <Header client:idle>
+      <Container>
+        <div class="flex gap-12 justify-between items-center">
+          <Logotype />
+          <div class="flex items-center gap-5">
+            <nav class="flex items-center gap-3 text-white">
+              <a href="#" class="font-medium text-sm">Sobre mí</a>
+              <a href="#" class="font-medium text-sm">Proyectos</a>
+            </nav>
+            <div class="flex items-center gap-2">
+              <a href="#" class="border-2 flex items-center gap-2.5 border-black font-medium w-max text-black rounded-xl text-sm px-4 py-2 bg-white transition-all duration-300 hover:ring-4 hover:ring-[#FFA36F40]">
+                Cotizar
+              </a>
+              <button class="w-10 h-10 flex items-center justify-center border border-stone-700 rounded-xl p-2 text-white transition-all duration-300 hover:ring-4 hover:ring-[#FFA36F40]">
+                <MoreHorizontalIcon size={16} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </Header>
     <main>
       <slot />
       <section id="services" class="py-36 bg-[#FFA36F] relative">
