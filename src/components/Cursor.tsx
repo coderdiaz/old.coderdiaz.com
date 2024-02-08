@@ -37,8 +37,11 @@ export default function Cursor() {
     document.addEventListener('mousemove', handleOnMouseMove);
     footer.addEventListener('mouseenter', handleOnMouseEnter);
     footer.addEventListener('mouseleave', handleOnMouseLeave);
-    services.addEventListener('mouseenter', handleOnMouseEnter);
-    services.addEventListener('mouseleave', handleOnMouseLeave);
+
+    if (services) {
+      services.addEventListener('mouseenter', handleOnMouseEnter);
+      services.addEventListener('mouseleave', handleOnMouseLeave);
+    }
 
     links.forEach((link) => {
       link.addEventListener('mouseenter', onMouseEnter);
