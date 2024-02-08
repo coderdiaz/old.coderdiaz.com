@@ -3,9 +3,9 @@ import { getCollection } from 'astro:content';
 import WorkLayout from '@/layouts/WorkLayout.astro';
 
 export async function getStaticPaths() {
-  const postsEntries = await getCollection('work');
+  const entries = await getCollection('work');
 
-  return postsEntries.map(entry => ({
+  return entries.map(entry => ({
     params: { slug: entry.slug }, props: { entry },
   }));
 }
