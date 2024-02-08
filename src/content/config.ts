@@ -26,6 +26,20 @@ const workCollection = defineCollection({
   }),
 });
 
+const postCollection = defineCollection({
+  type: 'content',
+  schema: ({ image }) => z.object({
+    title: z.string(),
+    featuredImage: image().refine((img) => img.width >= 1080, {
+      message: 'Image must be at least 1080 pixels wide!',
+    }).optional(),
+    publishedAt: z.date(),
+    tags: z.array(z.string()).optional(),
+    seo: seoSchema(image),
+  }),
+});
+
 export const collections = {
   work: workCollection,
+  posts: postCollection,
 };
