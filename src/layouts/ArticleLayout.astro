@@ -1,0 +1,87 @@
+---
+import '@/styles/geist.css';
+import '@/styles/safiro.css';
+import { MoreHorizontalIcon } from 'lucide-react';
+import Container from '@/components/Container.astro';
+import Cursor from '@/components/Cursor';
+import { Header } from '@/includes/Header';
+import Logotype from '@/components/Logotype.astro';
+
+const { entry } = Astro.props;
+---
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Javier Diaz — Ingeniería & Diseño</title>
+  </head>
+  <body class="antialiased bg-[#100F0F]">
+    <Header client:idle>
+      <Container>
+        <div class="flex gap-12 justify-between items-center">
+          <a href="/">
+            <Logotype />
+          </a>
+          <div class="flex items-center gap-5">
+            <nav class="hidden md:flex items-center gap-3 text-white">
+              <a href="#" class="font-medium text-sm">Sobre mí</a>
+              <a href="#" class="font-medium text-sm">Proyectos</a>
+            </nav>
+            <div class="flex items-center gap-2">
+              <a href="#" class="border-2 flex items-center gap-2.5 border-black font-medium w-max text-black rounded-xl text-sm px-4 py-2 bg-white transition-all duration-300 hover:ring-4 hover:ring-[#FFA36F40]">
+                Cotizar
+              </a>
+              <button class="w-10 h-10 flex items-center justify-center border border-stone-700 rounded-xl p-2 text-white transition-all duration-300 hover:ring-4 hover:ring-[#FFA36F40]">
+                <MoreHorizontalIcon size={16} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </Header>
+    <main>
+      <Container class="max-w-screen-md">
+        <article class="pt-16 pb-24">
+          <div class="flex flex-col gap-8">
+            <div class="flex flex-col md:px-12 gap-2 text-white">
+              <h1 class="text-3xl font-display">
+                {entry.data.title}
+              </h1>
+              <time datetime={entry.data.publishedAt} class="text-sm text-gray-400">
+                {new Date(entry.data.publishedAt).toLocaleDateString('es-MX', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </time>
+            </div>
+            <div class="min-h-[12rem] bg-white rounded-2xl"></div>
+            <div class="mx-auto md:px-12 prose prose-invert prose-stone">
+              <slot />
+            </div>
+          </div>
+        </article>
+      </Container>
+    </main>
+    <footer id="footer" class="bg-[#FFA36F] py-20 overflow-hidden">
+      <Container class="relative">
+        <span class="font-display mb-6 inline-block opacity-60 text-lg">Javier Diaz — Ingeniería y diseño</span>
+        <div class="flex flex-wrap gap-y-3 md:gap-y-6 gap-6 items-center mb-6 md:mb-3">
+          <a class="font-semibold font-mono" href="#">Sobre mí</a>
+          <a class="font-semibold font-mono" href="#">Contacto</a>
+          <a class="font-semibold font-mono" href="#">Mis herramientas</a>
+        </div>
+        <div class="flex flex-wrap gap-y-3 md:gap-y-6 gap-6 items-center mb-12">
+          <a class="font-semibold font-mono" href="https://x.com/coderdiaz" rel="noopener noreferrer">x.com/coderdiaz</a>
+          <a class="font-semibold font-mono" href="https://layers.to/coderdiaz" rel="noopener noreferrer">layers.to/coderdiaz</a>
+          <a class="font-semibold font-mono" href="https://read.cv/coderdiaz" rel="noopener noreferrer">read.cv/coderdiaz</a>
+        </div>
+        <span class="inline-block">&copy; Since 2015.</span>
+        <span class="absolute -right-16 -top-[12rem] mb-0 hidden font-mono text-[50rem] text-black leading-none opacity-5 lg:flex">*</span>
+      </Container>
+    </footer>
+    <Cursor client:load />
+  </body>
+</html>
