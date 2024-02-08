@@ -6,7 +6,6 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Container from '@/components/Container.astro';
 import Project from '@/components/Project.astro';
 import Article from '@/components/Article.astro';
-import Logotype from '@/components/Logotype.astro';
 import Family from '@/assets/images/Family@2x.jpg';
 import Working from '@/assets/images/Working@2x.jpg';
 import { cn } from '@/lib/utils';
@@ -19,10 +18,9 @@ const posts = (await getCollection('posts')).sort(
 const latestPosts = posts.slice(0, 3);
 ---
 <BaseLayout>
-  <section class="pt-32 md:pt-32 pb-12">
+  <section class="pt-32 md:pt-20 pb-12">
     <Container>
       <div class="flex flex-col gap-6">
-        <Logotype />
         <div class="flex flex-col gap-3">
           <span class="text-lg text-gray-300">Hola, soy Javier Diaz</span>
           <div class="relative w-full lg:w-[52rem]">
