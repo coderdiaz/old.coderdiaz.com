@@ -8,6 +8,10 @@ import Logotype from '@/assets/images/Logotype.svg';
 import Family from '@/assets/images/Family@2x.jpg';
 import Working from '@/assets/images/Working@2x.jpg';
 import { Marquee } from '@/components/Marquee';
+import { getCollection } from 'astro:content';
+import { cn } from '@/lib/utils';
+
+const work =  await getCollection('work');
 ---
 <BaseLayout>
   <section class="pt-32 md:pt-32 pb-12">
@@ -64,9 +68,9 @@ import { Marquee } from '@/components/Marquee';
       </div>
       <div class="">
         <div class="sticky top-0 flex flex-col gap-12">
-          <Project />
-          <Project class="top-[5rem]"  />
-          <Project />
+          {work.map((item: any, index: number) => (
+            <Project class={cn({ 'top-[5rem]': index > 0 })} item={item} />
+          ))}
         </div>
       </div>
     </Container>
