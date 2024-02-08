@@ -9,7 +9,6 @@ type Props = {
 
 const { class: className, item } = Astro.props;
 const services = item.data.services.slice(0, 2);
-console.log(item);
 ---
 <div class={cn('sticky top-[2rem] overflow-hidden', className)}>
   <a href={`/${item.slug}`} class="relative w-full h-full bg-white group">
