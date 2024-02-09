@@ -1,8 +1,8 @@
 ---
 import Container from '@/components/Container.astro';
 import { MotionHeader } from '@/components/MotionHeader';
-import { Navigation } from '@/components/Navigation';
 import Logotype from '@/components/Logotype.astro';
+import { GetaQuote } from '@/components/GetaQuote';
 ---
 <MotionHeader client:idle>
   <Container>
@@ -12,10 +12,10 @@ import Logotype from '@/components/Logotype.astro';
       </a>
       <div class="flex items-center gap-5">
         <nav class="hidden md:flex items-center gap-3 text-white">
-          <a href="#" class="font-medium text-sm">Sobre mí</a>
-          <a href="#" class="font-medium text-sm">Proyectos</a>
+          <a href="/sobre-mi/" class="font-medium text-sm">Sobre mí</a>
+          <a href="/proyectos/" class="font-medium text-sm">Proyectos</a>
         </nav>
-        <Navigation client:load />
+        <GetaQuote client:load />
       </div>
     </div>
   </Container>

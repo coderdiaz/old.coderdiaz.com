@@ -1,3 +1,4 @@
 import { atom } from 'nanostores';
 
-export const openDrawer = atom(false);
+export const $navigation = atom(false);
+export const $quote = atom(false);

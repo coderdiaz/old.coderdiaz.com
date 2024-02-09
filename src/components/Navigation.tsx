@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 import { useStore } from '@nanostores/react';
-import { openDrawer } from '@/lib/store';
+import { $navigation } from '@/lib/store';
 import { XIcon } from 'lucide-react';
 import { RemoveScroll }  from 'react-remove-scroll';
 
 export const Navigation = () => {
-  const open = useStore(openDrawer);
-  const handleClose = () => openDrawer.set(false);
+  const open = useStore($navigation);
+  const handleClose = () => $navigation.set(false);
 
   return (
     <motion.div

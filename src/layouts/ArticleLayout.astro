@@ -5,6 +5,7 @@ import Container from '@/components/Container.astro';
 import Cursor from '@/components/Cursor';
 import Header from '@/includes/Header.astro';
 import { Navigation } from '@/components/Navigation';
+import { Quote } from '@/components/Quote';
 
 const { entry } = Astro.props;
 ---
@@ -61,5 +62,6 @@ const { entry } = Astro.props;
     </footer>
     <Cursor client:load />
     <Navigation client:idle />
+    <Quote client:idle />
   </body>
 </html>

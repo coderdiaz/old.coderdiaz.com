@@ -4,6 +4,10 @@ import '@/styles/safiro.css';
 import Container from '@/components/Container.astro';
 import Cursor from '@/components/Cursor';
 import Header from '@/includes/Header.astro';
+import { Navigation } from '@/components/Navigation';
+import { Quote } from '@/components/Quote';
+import { Marquee } from '@/components/Marquee';
+import { MarqueeReverse } from '@/components/Marquee';
 ---
 <html lang="es">
   <head>
@@ -18,7 +22,7 @@ import Header from '@/includes/Header.astro';
       Cal.ns["cuentame-sobre-tu-proyecto"]("ui", {"styles":{"branding":{"brandColor":"#ffa36f"}},"hideEventTypeDetails":false,"layout":"month_view"});
     </script>
   </head>
-  <body class="flex flex-col bg-[#100F0F] min-h-screen">
+  <body class="flex flex-col antialiased bg-[#100F0F] min-h-screen">
     <Header />
     <main class="flex-grow">
       <slot />
@@ -92,5 +96,6 @@ import Header from '@/includes/Header.astro';
     </footer>
     <Cursor client:load />
     <Navigation client:idle />
+    <Quote client:idle />
   </body>
 </html>
