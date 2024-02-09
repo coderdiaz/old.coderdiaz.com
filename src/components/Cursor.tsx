@@ -63,7 +63,7 @@ export default function Cursor() {
 
   return (
     <div ref={ref} className="hidden md:block fixed top-0 left-0 z-[99999] pointer-events-none transition-all duration-[.3s] ease-[cubic-bezier(.075,.82,.165,1)] will-change-transform origin-[center_center]">
-      <div id="cursor" className="absolute bg-[#FFB3C0]/20 w-10 h-10 rounded-full z-50 transform-none transition-all duration-[.3s] ease-[cubic-bezier(.075,.82,.165,1)]" />
+      <div id="cursor" className="absolute bg-[#FFB3C0]/20 w-10 h-10 rounded-full z-[9999] transform-none transition-all duration-[.3s] ease-[cubic-bezier(.075,.82,.165,1)]" />
     </div>
   );
 }
