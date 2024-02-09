@@ -1,14 +1,13 @@
 ---
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
-import { CalendarIcon } from 'lucide-react';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Container from '@/components/Container.astro';
 import Project from '@/components/Project.astro';
 import Article from '@/components/Article.astro';
+import { cn } from '@/lib/utils';
 import Family from '@/assets/images/Family@2x.jpg';
 import Working from '@/assets/images/Working@2x.jpg';
-import { cn } from '@/lib/utils';
 
 const work =  await getCollection('work');
 const posts = (await getCollection('posts')).sort(
@@ -34,10 +33,14 @@ const latestPosts = posts.slice(0, 3);
           </p>
         </div>
         <div class="flex gap-4 items-center">
-          <a href="https://cal.com/coderdiaz/cuentame-sobre-tu-proyecto" rel="noopener noreferrer" class="border-2 flex items-center gap-2.5 border-black font-medium w-max text-black rounded-full text-lg px-6 py-3 bg-white transition-all duration-300 hover:ring-4 hover:ring-[#FFA36F75]">
-            <CalendarIcon size={20} />
-            <span class="inline-block">Agendar una llamada</span>
-          </a>
+          <button 
+            data-cal-link="coderdiaz/cuentame-sobre-tu-proyecto"
+            data-cal-namespace="cuentame-sobre-tu-proyecto"
+            data-cal-config='{"layout":"month_view"}'
+            class="border-2 border-black font-medium w-max text-black rounded-full text-lg px-6 py-3 bg-white transition-all duration-300 hover:ring-4 hover:ring-[#FFA36F75] focus:outline-none focus:ring-2 focus:ring-[#FFA36F75]"
+          >
+            Agendar una llamada
+          </button>
         </div>
       </div>
     </Container>
