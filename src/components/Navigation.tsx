@@ -4,7 +4,7 @@ import { openDrawer } from '@/lib/store';
 import { XIcon } from 'lucide-react';
 import { RemoveScroll }  from 'react-remove-scroll';
 
-export const Quote = () => {
+export const Navigation = () => {
   const open = useStore(openDrawer);
   const handleClose = () => openDrawer.set(false);
 

@@ -5,7 +5,7 @@ interface HeaderProps {
   children?: React.ReactNode;
 }
 
-export const Header = ({ children }: HeaderProps) => {
+export const MotionHeader = ({ children }: HeaderProps) => {
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
 

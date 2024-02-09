@@ -2,12 +2,8 @@
 import '@/styles/roobert.css';
 import '@/styles/safiro.css';
 import Container from '@/components/Container.astro';
-import Logotype from '@/components/Logotype.astro';
 import Cursor from '@/components/Cursor';
-import { Marquee, MarqueeReverse } from '@/components/Marquee';
-import { Header } from '@/includes/Header';
-import { Quote } from '@/components/Quote';
-import { GetaQuote } from '@/components/GetaQuote';
+import Header from '@/includes/Header.astro';
 ---
 <html lang="es">
   <head>
@@ -23,22 +19,7 @@ import { GetaQuote } from '@/components/GetaQuote';
     </script>
   </head>
   <body class="flex flex-col bg-[#100F0F] min-h-screen">
-    <Header client:idle>
-      <Container>
-        <div class="flex gap-12 justify-between items-center">
-          <a href="/">
-            <Logotype />
-          </a>
-          <div class="flex items-center gap-5">
-            <nav class="hidden md:flex items-center gap-3 text-white">
-              <a href="#" class="font-medium text-sm">Sobre mí</a>
-              <a href="#" class="font-medium text-sm">Proyectos</a>
-            </nav>
-            <GetaQuote client:load />
-          </div>
-        </div>
-      </Container>
-    </Header>
+    <Header />
     <main class="flex-grow">
       <slot />
       <section id="services" class="py-36 bg-[#FFA36F] relative">
@@ -110,6 +91,6 @@ import { GetaQuote } from '@/components/GetaQuote';
       </Container>
     </footer>
     <Cursor client:load />
-    <Quote client:idle />
+    <Navigation client:idle />
   </body>
-</html>
+</html>@/includes/HeaderWrapper@/includes/MotionHeader@/components/MotionHeader

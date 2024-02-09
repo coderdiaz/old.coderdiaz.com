@@ -1,11 +1,10 @@
 ---
 import '@/styles/roobert.css';
 import '@/styles/safiro.css';
-import { MoreHorizontalIcon } from 'lucide-react';
 import Container from '@/components/Container.astro';
 import Cursor from '@/components/Cursor';
-import { Header } from '@/includes/Header';
-import Logotype from '@/components/Logotype.astro';
+import Header from '@/includes/Header.astro';
+import { Navigation } from '@/components/Navigation';
 
 const { entry } = Astro.props;
 ---
@@ -18,29 +17,7 @@ const { entry } = Astro.props;
     <title>Javier Diaz — Ingeniería & Diseño</title>
   </head>
   <body class="bg-[#100F0F]">
-    <Header client:idle>
-      <Container>
-        <div class="flex gap-12 justify-between items-center">
-          <a href="/">
-            <Logotype />
-          </a>
-          <div class="flex items-center gap-5">
-            <nav class="hidden md:flex items-center gap-3 text-white">
-              <a href="#" class="font-medium text-sm">Sobre mí</a>
-              <a href="#" class="font-medium text-sm">Proyectos</a>
-            </nav>
-            <div class="flex items-center gap-2">
-              <a href="#" class="border-2 flex items-center gap-2.5 border-black font-medium w-max text-black rounded-xl text-sm px-4 py-2 bg-white transition-all duration-300 hover:ring-4 hover:ring-[#FFA36F40]">
-                Cotizar
-              </a>
-              <button class="w-10 h-10 flex items-center justify-center border border-stone-700 rounded-xl p-2 text-white transition-all duration-300 hover:ring-4 hover:ring-[#FFA36F40]">
-                <MoreHorizontalIcon size={16} />
-              </button>
-            </div>
-          </div>
-        </div>
-      </Container>
-    </Header>
+    <Header />
     <main>
       <Container class="max-w-screen-md">
         <article class="pt-16 pb-24">
@@ -83,5 +60,6 @@ const { entry } = Astro.props;
       </Container>
     </footer>
     <Cursor client:load />
+    <Navigation client:idle />
   </body>
 </html>
