@@ -13,6 +13,7 @@
     "@astrojs/check": "^0.4.1",
     "@astrojs/react": "^3.0.9",
     "@astrojs/tailwind": "^5.1.0",
+    "@formcarry/react": "^1.0.4",
     "@nanostores/react": "^0.7.1",
     "@tailwindcss/typography": "^0.5.10",
     "astro": "^4.3.3",
