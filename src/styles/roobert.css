@@ -9,6 +9,15 @@
 
 @font-face {
   font-family: 'Roobert';
+  src: url('/fonts/roobert/roobert-medium.woff2') format('woff2'),
+    url('/fonts/roobert/roobert-medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roobert';
   src: url('/fonts/roobert/roobert-semibold.woff2') format('woff2'),
     url('/fonts/roobert/roobert-semibold.woff') format('woff');
   font-weight: 600;
