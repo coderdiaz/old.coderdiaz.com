@@ -20,7 +20,7 @@ const { entry } = Astro.props;
       <Container class="max-w-screen-md">
         <article class="pt-16 pb-24">
           <div class="flex flex-col gap-8">
-            <div class="flex flex-col md:px-12 gap-2 text-white">
+            <div class="flex flex-col md:px-8 gap-4 text-white">
               <h1 class="text-3xl md:text-4xl font-semibold font-display">
                 {entry.data.title}
               </h1>
@@ -33,7 +33,7 @@ const { entry } = Astro.props;
               </time>
             </div>
             <div class="min-h-[12rem] bg-white rounded-2xl"></div>
-            <div class="mx-auto md:px-12 prose prose-invert prose-stone">
+            <div class="mx-auto prose prose-invert prose-stone">
               <slot />
             </div>
           </div>
