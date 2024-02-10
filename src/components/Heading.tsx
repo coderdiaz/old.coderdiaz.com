@@ -2,22 +2,26 @@ import { animate } from 'framer-motion'
 import { Code, LayoutTemplate, Shapes } from 'lucide-react';
 
 export default function Heading() {
-  const onMouseEnterInterfaces = () => {
+  const onMouseEnterInterfaces = (e: any) => {
+    e.stopPropagation();
     animate([['#first', { y: -45, x: -40, rotateZ: '-10deg', opacity: 1 }, { type: 'spring', bounce: 0.5, duration: 0.5 }]]);
     animate([['#second', { y: 50, x: 20, rotateZ: '10deg', opacity: 1 }, { type: 'spring', bounce: 0.5, duration: 0.5 }]]);
   }
 
-  const onMouseLeaveInterfaces = () => {
+  const onMouseLeaveInterfaces = (e: any) => {
+    e.stopPropagation();
     animate([['#first', { y: 0, x: 0, rotateZ: 0, opacity: 0 }, { duration: 0.25 }]]);
     animate([['#second', { y: 0, x: 0, rotateZ: 0, opacity: 0 }, { duration: 0.25 }]]);
   }
 
-  const onMouseEnterSystems = () => {
+  const onMouseEnterSystems = (e: any) => {
+    e.stopPropagation();
     animate([['#firstSystems', { y: 45, x: -20, rotateZ: '-10deg', opacity: 1 }, { type: 'spring', bounce: 0.5, duration: 0.5 }]]);
     animate([['#secondSystems', { y: -56, x: 20, rotateZ: '15deg', opacity: 1 }, { type: 'spring', bounce: 0.5, duration: 0.5 }]]);
   }
 
-  const onMouseLeaveSystems = () => {
+  const onMouseLeaveSystems = (e: any) => {
+    e.stopPropagation();
     animate([['#firstSystems', { y: 0, x: 0, rotateZ: 0, opacity: 0 }, { duration: 0.25 }]]);
     animate([['#secondSystems', { y: 0, x: 0, rotateZ: 0, opacity: 0 }, { duration: 0.25 }]]);
   }
@@ -35,7 +39,7 @@ export default function Heading() {
         <span
           onMouseEnter={onMouseEnterInterfaces}
           onMouseLeave={onMouseLeaveInterfaces}
-          className="relative text-[#FFB3C0]"
+          className="relative inline-block z-[9999] text-[#FFB3C0]"
         >
           Interfaces
         </span>.
@@ -57,7 +61,7 @@ export default function Heading() {
         <span
           onMouseEnter={onMouseEnterSystems}
           onMouseLeave={onMouseLeaveSystems}
-          className="relative text-[#FFA36F]"
+          className="relative inline-block z-[9999] text-[#FFA36F]"
         >
           Sistemas
         </span>.
