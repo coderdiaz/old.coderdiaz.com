@@ -1,22 +1,19 @@
 ---
 import '@/styles/roobert.css';
-import '@/styles/safiro.css';
 import { Image } from 'astro:assets';
+import { Quote } from 'lucide-react';
 import Container from '@/components/Container.astro';
 import Cursor from '@/components/Cursor';
 import Header from '@/includes/Header.astro';
+import Footer from '@/includes/Footer.astro';
 import { Navigation } from '@/components/Navigation';
-import { Quote } from 'lucide-react';
+import SeoHead from '@/includes/SeoHead.astro';
 
 const { entry } = Astro.props;
 ---
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{entry.data.client} — Javier Diaz: Ingeniería & Diseño</title>
+    <SeoHead title={`${entry.data.client} — Javier Diaz`}></SeoHead>
   </head>
   <body class="bg-[#100F0F]">
     <Header />
@@ -29,7 +26,7 @@ const { entry } = Astro.props;
             </div>
             <div class="flex flex-col gap-3 text-white md:px-20 mb-6 md:mb-14">
               <span class="text-lg text-[#FFA36F]">{entry.data.client}</span>
-              <h1 class="text-3xl font-display text-pretty">{entry.data.title}</h1>
+              <h1 class="text-3xl md:text-4xl font-display font-semibold text-balance">{entry.data.title}</h1>
             </div>
             <div class="md:px-20 grid md:grid-cols-7 gap-8 md:gap-4">
               <div class="md:col-span-2 order-2 md:order-1">
@@ -58,23 +55,7 @@ const { entry } = Astro.props;
         </Container>
       </section>
     </main>
-    <footer id="footer" class="bg-[#FFA36F] py-20 overflow-hidden">
-      <Container class="relative">
-        <span class="font-display mb-6 inline-block opacity-60 text-lg">Javier Diaz — Ingeniería y diseño</span>
-        <div class="flex flex-wrap gap-y-3 md:gap-y-6 gap-6 items-center mb-6 md:mb-3">
-          <a class="font-semibold font-mono" href="#">Sobre mí</a>
-          <a class="font-semibold font-mono" href="#">Contacto</a>
-          <a class="font-semibold font-mono" href="#">Mis herramientas</a>
-        </div>
-        <div class="flex flex-wrap gap-y-3 md:gap-y-6 gap-6 items-center mb-12">
-          <a class="font-semibold font-mono" href="https://x.com/coderdiaz" rel="noopener noreferrer">x.com/coderdiaz</a>
-          <a class="font-semibold font-mono" href="https://layers.to/coderdiaz" rel="noopener noreferrer">layers.to/coderdiaz</a>
-          <a class="font-semibold font-mono" href="https://read.cv/coderdiaz" rel="noopener noreferrer">read.cv/coderdiaz</a>
-        </div>
-        <span class="inline-block">&copy; Since 2015.</span>
-        <span class="absolute -right-16 -top-[12rem] mb-0 hidden font-mono text-[50rem] text-black leading-none opacity-5 lg:flex">*</span>
-      </Container>
-    </footer>
+    <Footer />
     <Cursor client:load />
     <Navigation client:idle />
     <Quote client:idle />

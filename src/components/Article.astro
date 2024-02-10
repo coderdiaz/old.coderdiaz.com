@@ -17,7 +17,7 @@ const { item } = Astro.props;
               day: 'numeric',
             })}
           </time>
-          <h3 class="text-2xl text-pretty">{item.data.title}</h3>
+          <h3 class="font-display text-2xl font-semibold text-pretty">{item.data.title}</h3>
         </div>
         <div class="flex gap-3 flex-wrapitems-center text-white">
           {item.data.tags.map((tag: string) => (

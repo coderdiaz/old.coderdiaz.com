@@ -1,0 +1,14 @@
+---
+type Props = {
+  title?: string;
+}
+const analytics = import.meta.env.ENABLED_ANALYTICS;
+const { title } = Astro.props;
+---
+<meta charset="utf-8" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+<title>{ title || 'Javier Diaz — Ingeniería & Diseño'}</title>
+{ analytics && <script defer data-domain="coderdiaz.com" src="https://analytics.coderdiaz.com/js/script.js"></script>}
+<slot />

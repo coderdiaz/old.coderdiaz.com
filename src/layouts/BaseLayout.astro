@@ -1,9 +1,10 @@
 ---
 import '@/styles/roobert.css';
-import '@/styles/safiro.css';
 import Container from '@/components/Container.astro';
 import Cursor from '@/components/Cursor';
 import Header from '@/includes/Header.astro';
+import SeoHead from '@/includes/SeoHead.astro';
+import Footer from '@/includes/Footer.astro';
 import { Navigation } from '@/components/Navigation';
 import { Quote } from '@/components/Quote';
 import { Marquee } from '@/components/Marquee';
@@ -11,23 +12,20 @@ import { MarqueeReverse } from '@/components/Marquee';
 ---
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Javier Diaz — Ingeniería & Diseño</title>
-    <script defer is:inline>
-      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-      Cal("init", "cuentame-sobre-tu-proyecto", {origin:"https://cal.com"});
-      Cal.ns["cuentame-sobre-tu-proyecto"]("ui", {"styles":{"branding":{"brandColor":"#ffa36f"}},"hideEventTypeDetails":false,"layout":"month_view"});
-    </script>
+    <SeoHead>
+      <script defer is:inline>
+        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement('script')).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === 'string' ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); }; })(window, 'https://app.cal.com/embed/embed.js', 'init');
+        Cal('init', 'cuentame-sobre-tu-proyecto', {origin:'https://cal.com'});
+        Cal.ns['cuentame-sobre-tu-proyecto']('ui', {'styles':{'branding':{'brandColor':'#ffa36f'}},'hideEventTypeDetails':false,'layout':'month_view'});
+      </script>
+    </SeoHead>
   </head>
-  <body class="flex flex-col antialiased bg-[#100F0F] min-h-screen">
+  <body class="flex flex-col bg-[#100F0F] min-h-screen">
     <Header />
     <main class="flex-grow">
       <slot />
       <section id="services" class="py-36 bg-[#FFA36F] relative">
-        <MarqueeReverse className="absolute top-0 z-0 mt-6 w-full -translate-y-24 bg-blue-500" client:idle>
+        <MarqueeReverse className="absolute top-0 z-0 mt-6 w-full -translate-y-[6.25rem] bg-blue-500" client:idle>
           <span class="text-2xl md:text-3xl uppercase font-bold tracking-widest ml-1">Next.js ✦</span>
           <span class="text-2xl md:text-3xl uppercase font-bold tracking-widest ml-1">GraphQL ✦</span>
           <span class="text-2xl md:text-3xl uppercase font-bold tracking-widest ml-1">Strapi ✦</span>
@@ -57,7 +55,7 @@ import { MarqueeReverse } from '@/components/Marquee';
           <div class="grid md:grid-cols-2 gap-12 md:gap-0 z-10">
             <div class="flex flex-col gap-4 text-white">
               <span class="font-medium text-lg text-black">Servicios</span>
-              <h2 class="text-5xl font-display text-orange-950/80 md:w-[20rem] lg:w-[28rem] mb-6">
+              <h2 class="text-5xl font-display text-orange-950/80 md:w-[20rem] lg:w-[24rem] mb-6">
                 Llevemos tu <span class="text-black">idea</span> de <span class="text-black">0 → 1</span>
               </h2>
               <a href="mailto:hola@coderdiaz.com" class="border-2 border-black font-medium w-max text-black rounded-full text-xl px-6 py-3 bg-white hover:bg-white/85 transition-colors duration-300">
@@ -77,23 +75,7 @@ import { MarqueeReverse } from '@/components/Marquee';
         </Container>
       </section>
     </main>
-    <footer id="footer" class="bg-[#FFA36F] py-20 overflow-hidden">
-      <Container class="relative">
-        <span class="font-display mb-6 inline-block opacity-60 text-lg">Javier Diaz — Ingeniería y diseño</span>
-        <div class="flex flex-wrap gap-y-3 md:gap-y-6 gap-6 items-center mb-6 md:mb-3">
-          <a class="font-semibold font-mono" href="#">Sobre mí</a>
-          <a class="font-semibold font-mono" href="#">Contacto</a>
-          <a class="font-semibold font-mono" href="#">Mis herramientas</a>
-        </div>
-        <div class="flex flex-wrap gap-y-3 md:gap-y-6 gap-6 items-center mb-12">
-          <a class="font-semibold font-mono" href="https://x.com/coderdiaz" rel="noopener noreferrer">x.com/coderdiaz</a>
-          <a class="font-semibold font-mono" href="https://layers.to/coderdiaz" rel="noopener noreferrer">layers.to/coderdiaz</a>
-          <a class="font-semibold font-mono" href="https://read.cv/coderdiaz" rel="noopener noreferrer">read.cv/coderdiaz</a>
-        </div>
-        <span class="inline-block">&copy; Since 2015.</span>
-        <span class="absolute -right-16 -top-[12rem] mb-0 hidden font-mono text-[50rem] text-black leading-none opacity-5 lg:flex">*</span>
-      </Container>
-    </footer>
+    <Footer />
     <Cursor client:load />
     <Navigation client:idle />
     <Quote client:idle />
