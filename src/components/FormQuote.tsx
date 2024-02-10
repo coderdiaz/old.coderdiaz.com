@@ -74,7 +74,7 @@ export const FormQuote = () => {
         <span className="contact-info">Información del proyecto</span>
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-5 p-5 bg-neutral-800 rounded-md justify-between">
-            <label className="text-neutral-400 flex-shrink-0">Tipo de proyecto</label>
+            <label className="text-neutral-400 flex-shrink-0">Servicio</label>
             <select
               name="projectType"
               className="focus:outline-none text-right flex-grow-0 bg-transparent"
@@ -88,7 +88,7 @@ export const FormQuote = () => {
             </select>
           </div>
           <div className="flex items-center gap-5 p-5 bg-neutral-800 rounded-md justify-between">
-            <label className="text-neutral-400 flex-shrink-0">Budged range</label>
+            <label className="text-neutral-400 flex-shrink-0">Presupuesto</label>
             <select
               name="budgedRange"
               className="focus:outline-none text-right flex-grow-0 bg-transparent"
@@ -102,7 +102,7 @@ export const FormQuote = () => {
             </select>
           </div>
           <div className="flex items-center gap-5 bg-neutral-800 rounded-md justify-between relative">
-            <label className="absolute top-0 mt-4 ml-5 left-0 text-neutral-400 flex-shrink-0">Message</label>
+            <label className="absolute top-0 mt-4 ml-5 left-0 text-neutral-400 flex-shrink-0">Mensaje</label>
             <textarea
               name="message"
               rows={3}
@@ -114,7 +114,7 @@ export const FormQuote = () => {
           <button
             type="submit"
             disabled={state.submitting || state.submitted}
-            className={cn('mt-2 flex items-center font-semibold justify-center border-2 border-transparent rounded-xl px-4 py-4 transition-all duration-300 bg-white text-gray-950 hover:ring-4 hover:ring-[#FFA36F40] resize-none', {
+            className={cn('mt-2 flex items-center font-medium justify-center border-2 border-transparent rounded-xl px-4 py-4 transition-all duration-300 bg-white text-gray-950 hover:ring-4 hover:ring-[#FFA36F40] resize-none', {
               'bg-green-400 hover:ring-0': state.submitted,
             })}
           >

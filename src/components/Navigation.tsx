@@ -48,33 +48,31 @@ export const Navigation = () => {
         animate={open ? 'visible' : 'hidden'}
         className="relative p-5 w-full md:max-w-[24rem] flex-shrink-0 bg-[#1A1A1A] h-full rounded-2xl text-white overflow-y-scroll"
       >
-        <RemoveScroll enabled={open}>
-          <div className="flex flex-col gap-6">
-            <div className="flex justify-end w-full sticky top-0">
-              <button onClick={handleClose} className="flex items-center justify-center border border-stone-700 rounded-xl p-2 text-white transition-all duration-300 hover:ring-4 hover:ring-[#FFA36F40]">
-                <XIcon size={16} />
-              </button>
-            </div>
-            <div className="flex flex-col gap-3">
-              <span className="uppercase tracking-tight font-display text-xs text-stone-400">coderdiaz.com</span>
-              <nav className="flex flex-col gap-2">
-                <a href="#" className="text-white font-semibold text-xl">Inicio</a>
-                <a href="#" className="text-white font-semibold text-xl">Jardín Digital</a>
-                <a href="#" className="text-white font-semibold text-xl">Sobre mí</a>
-                <a href="#" className="text-white font-semibold text-xl">Proyectos</a>
-              </nav>
-            </div>
-            <div className="flex flex-col gap-3">
-              <span className="uppercase tracking-tight font-display text-xs text-stone-400">Sígueme</span>
-              <nav className="flex flex-col gap-2">
-                <a href="#" className="text-white font-semibold">X.com</a>
-                <a href="#" className="text-white font-semibold">Layers</a>
-                <a href="#" className="text-white font-semibold">Read.cv</a>
-                <a href="#" className="text-white font-semibold">GitHub</a>
-              </nav>
-            </div>
+        <div className="flex flex-col gap-6">
+          <div className="flex justify-end w-full sticky top-0">
+            <button onClick={handleClose} className="flex items-center justify-center border border-stone-700 rounded-xl p-2 text-white transition-all duration-300 hover:ring-4 hover:ring-[#FFA36F40]">
+              <XIcon size={16} />
+            </button>
           </div>
-        </RemoveScroll>
+          <div className="flex flex-col gap-3">
+            <span className="uppercase tracking-tight font-display text-xs text-stone-400">coderdiaz.com</span>
+            <nav className="flex flex-col gap-2">
+              <a href="#" className="text-white font-semibold text-xl">Inicio</a>
+              <a href="#" className="text-white font-semibold text-xl">Jardín Digital</a>
+              <a href="#" className="text-white font-semibold text-xl">Sobre mí</a>
+              <a href="#" className="text-white font-semibold text-xl">Proyectos</a>
+            </nav>
+          </div>
+          <div className="flex flex-col gap-3">
+            <span className="uppercase tracking-tight font-display text-xs text-stone-400">Sígueme</span>
+            <nav className="flex flex-col gap-2">
+              <a href="#" className="text-white font-semibold">X.com</a>
+              <a href="#" className="text-white font-semibold">Layers</a>
+              <a href="#" className="text-white font-semibold">Read.cv</a>
+              <a href="#" className="text-white font-semibold">GitHub</a>
+            </nav>
+          </div>
+        </div>
       </motion.div>
     </motion.div>
   )
