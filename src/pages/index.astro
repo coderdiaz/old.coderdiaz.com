@@ -5,6 +5,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Container from '@/components/Container.astro';
 import Project from '@/components/Project.astro';
 import Article from '@/components/Article.astro';
+import Heading from '@/components/Heading';
 import { cn } from '@/lib/utils';
 import Family from '@/assets/images/Family@2x.jpg';
 import Working from '@/assets/images/Working@2x.jpg';
@@ -17,19 +18,17 @@ const posts = (await getCollection('posts')).sort(
 const latestPosts = posts.slice(0, 3);
 ---
 <BaseLayout>
-  <section class="pt-14 md:pt-20 pb-12">
+  <section class="pt-14 md:pt-24 pb-16">
     <Container>
       <div class="flex flex-col gap-6">
         <div class="flex flex-col gap-3">
           <span class="text-lg text-gray-300">Hola, soy Javier Diaz</span>
           <div class="relative w-full lg:w-[52rem]">
             <span class="absolute left-0 -ml-16 mt-16 top-0 mb-0 hidden font-mono text-[10rem] text-white leading-none opacity-5 lg:flex">*</span>
-            <h1 class="font-display text-white font-bold text-4xl md:text-7xl">
-              Creo <span class="text-[#FFA36F]">productos digitales</span>. <span class="text-[#FFB3C0]">Interfaces</span>. Sistemas.
-            </h1>
+           <Heading client:idle />
           </div>
           <p class="text-gray-200 md:text-lg md:w-[36rem]">
-            Dedicado en construir soluciones con productos digitales que mejoren la productividad de las personas y sus flujos de trabajo a través de la tecnología y el diseño.
+            Me dedico a crear soluciones en productos digitales que mejoren la productividad de las personas y sus flujos de trabajo a través de la tecnología y el diseño.
           </p>
         </div>
         <div class="flex gap-4 items-center">
@@ -45,7 +44,7 @@ const latestPosts = posts.slice(0, 3);
       </div>
     </Container>
   </section>
-  <section class="pt-8 pb-12 md:py-20 overflow-hidden">
+  <section class="pt-8 pb-12 md:py-20 md:pb-28 overflow-hidden">
     <Container>
       <div class="grid lg:grid-cols-2 gap-16 md:gap-32 items-center justify-center">
         <div class="lg:aspect-square h-72 lg:h-auto relative">
