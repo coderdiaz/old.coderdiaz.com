@@ -12,25 +12,28 @@ export const Quote = () => {
     <motion.div
       variants={{
         visible: {
+          display: 'flex',
           opacity: 1,
           visibility: 'visible',
           z: 9999,
         },
         hidden: {
+          display: 'flex',
           opacity: 0,
           visibility: 'hidden',
-          z: -1,
+          z: -9999,
         },
       }}
+      initial={{ display: 'none', opacity: 0, visibility: 'hidden' }}
       animate={open ? 'visible' : 'hidden'}
       className="fixed flex top-0 left-0 w-full h-full z-[9950] justify-end p-3"
     >
       <motion.div
         variants={{
-          visible: { x: 0, opacity: 1, visibility: 'visible' },
-          hidden: { opacity: 0, visibility: 'hidden' },
+          visible: { x: 0, display: 'flex', opacity: 1, visibility: 'visible' },
+          hidden: { display: 'flex', opacity: 0, visibility: 'hidden' },
         }}
-        initial={{ x: '100%', opacity: 0, visibility: 'hidden' }}
+        initial={{ x: '100%', display: 'none', opacity: 0, visibility: 'hidden' }}
         exit={{ x: 0, opacity: 0, visibility: 'hidden' }}
         transition={{ duration: 0.25 }}
         animate={open ? 'visible' : 'hidden'}
