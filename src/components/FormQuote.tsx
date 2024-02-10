@@ -1,36 +1,7 @@
-import { useReducer, type ChangeEvent, type FormEvent } from 'react';
-
-type State = {
-  name: string;
-  company: string;
-  email: string;
-  projectType: string;
-  budgedRange: string;
-  message: string;
-}
-type Action = 
-  { type: 'UPDATE_FIELD'; field: string; value: string }
-  | { type: 'RESET' };
-
-const initialState: State = {
-  name: '',
-  company: '',
-  email: '',
-  projectType: '',
-  budgedRange: '',
-  message: '',
-};
-
-const formReducer = (state: State, action: Action) => {
-  switch (action.type) {
-    case 'UPDATE_FIELD':
-      return { ...state, [action.field]: action.value};
-    case 'RESET':
-      return initialState;
-    default:
-      return state;
-  }
-}
+import { useEffect, useRef, useState } from 'react';
+import { useForm } from '@formcarry/react';
+import { CheckCircle2Icon } from 'lucide-react';
+import { cn } from '@/lib/utils';
 type Budged = {
   [key: string]: string[];
 }
@@ -41,24 +12,30 @@ const budgets: Budged = {
 }
 
 export const FormQuote = () => {
-  const [formState, dispatch] = useReducer(formReducer, initialState);
+  const formRef = useRef<HTMLFormElement>(null);
+  const budgedRangeRef = useRef<HTMLSelectElement>(null);
+  const [projectType, setProjectType] = useState('');
+  const { state, submit } = useForm({
+    id: 'k8G1dh9vlgI',
+  });
 
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement>) => {
-    const { name, value } = event.target;
-    dispatch({ type: 'UPDATE_FIELD', field: name, value });
-
-    // Reset budged-range when project-type changes
-    if (name === 'projectType') {
-      dispatch({ type: 'UPDATE_FIELD', field: 'budgedRange', value: '' });
+  useEffect(() => {
+    if (state.submitted && formRef.current) {
+      formRef.current.reset();
+      setTimeout(() => {
+        state.submitted = false;
+      }, 1500)
     }
-  }
+  }, [state.submitted])
 
-  const handleOnSubmit = (e: FormEvent) => {
-    e.preventDefault();
-  }
+  useEffect(() => {
+    if (budgedRangeRef.current) {
+      budgedRangeRef.current.value = '';
+    }
+  }, [projectType]);
 
   return (
-    <form onSubmit={handleOnSubmit} className="flex flex-col gap-6">
+    <form ref={formRef} onSubmit={submit} className="flex flex-col gap-6">
       <div className="flex flex-col gap-3">
         <span className="contact-info">Datos de contacto</span>
         <div className="flex flex-col gap-2">
@@ -69,8 +46,6 @@ export const FormQuote = () => {
               className="focus:outline-none text-right w-full flex-grow-0 bg-transparent"
               placeholder="Bruce Wayne"
               name="name"
-              value={formState.name}
-              onChange={handleInputChange}
               required
             />
           </div>
@@ -81,8 +56,6 @@ export const FormQuote = () => {
               className="focus:outline-none text-right w-full flex-grow-0 bg-transparent"
               placeholder="Startup, Co"
               name="company"
-              value={formState.company}
-              onChange={handleInputChange}
             />
           </div>
           <div className="flex items-center gap-5 p-5 bg-neutral-800 rounded-md">
@@ -92,8 +65,6 @@ export const FormQuote = () => {
               className="focus:outline-none text-right w-full flex-grow-0 bg-transparent"
               placeholder="bruce.wayne@company.co"
               name="email"
-              value={formState.email}
-              onChange={handleInputChange}
               required
             />
           </div>
@@ -106,9 +77,9 @@ export const FormQuote = () => {
             <label className="text-neutral-400 flex-shrink-0">Tipo de proyecto</label>
             <select
               name="projectType"
-              value={formState.projectType}
-              onChange={handleInputChange}
               className="focus:outline-none text-right flex-grow-0 bg-transparent"
+              value={projectType}
+              onChange={(e) => setProjectType(e.target.value)}
               required
             >
               <option value="">Selecciona una opción</option>
@@ -120,13 +91,12 @@ export const FormQuote = () => {
             <label className="text-neutral-400 flex-shrink-0">Budged range</label>
             <select
               name="budgedRange"
-              value={formState.budgedRange}
-              onChange={handleInputChange}
               className="focus:outline-none text-right flex-grow-0 bg-transparent"
+              ref={budgedRangeRef}
               required
             >
               <option value="">Selecciona una opción</option>
-              {formState.projectType && budgets[formState.projectType].map((budged, index) => (
+              {projectType && budgets[projectType].map((budged, index) => (
                 <option key={index} value={budged}>{budged}</option>
               ))}
             </select>
@@ -135,16 +105,33 @@ export const FormQuote = () => {
             <label className="absolute top-0 mt-4 ml-5 left-0 text-neutral-400 flex-shrink-0">Message</label>
             <textarea
               name="message"
-              value={formState.message}
-              onChange={handleInputChange}
               rows={3}
               placeholder="Describe tu proyecto en algunos párrafos..."
               className="px-5 pb-5 pt-12 focus:outline-none w-full flex-grow-0 bg-transparent"
               required
             />
           </div>
-          <button type="submit" className="mt-2 flex items-center font-semibold justify-center border-2 border-transparent rounded-xl px-4 py-4 transition-all duration-300 bg-white text-gray-950 hover:ring-4 hover:ring-[#FFA36F40] resize-none">
-            Enviar detalles
+          <button
+            type="submit"
+            disabled={state.submitting || state.submitted}
+            className={cn('mt-2 flex items-center font-semibold justify-center border-2 border-transparent rounded-xl px-4 py-4 transition-all duration-300 bg-white text-gray-950 hover:ring-4 hover:ring-[#FFA36F40] resize-none', {
+              'bg-green-400 hover:ring-0': state.submitted,
+            })}
+          >
+            <span className={cn({
+              'inline': !state.submitting,
+              'hidden': state.submitting || state.submitted,
+            })}>Enviar detalles</span>
+            <span className={cn({
+              'hidden': !state.submitting || state.submitted,
+              'inline': state.submitting,
+            })}>Enviando información...</span>
+            <div className={cn('flex items-center gap-2', {
+              'hidden': !state.submitted,
+            })}>
+              <CheckCircle2Icon size={18} strokeWidth={2.5} />
+              <span>Mensaje enviado. Nos vemos pronto.</span>
+            </div>
           </button>
         </div>
       </div>

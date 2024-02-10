@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
-import { useStore } from '@nanostores/react';
-import { $quote } from '@/lib/store';
 import { XIcon } from 'lucide-react';
 import { RemoveScroll }  from 'react-remove-scroll';
+import { useStore } from '@nanostores/react';
+import { $quote } from '@/lib/store';
+import { FormQuote } from './FormQuote';
 
 export const Quote = () => {
   const open = useStore($quote);
@@ -57,67 +58,9 @@ export const Quote = () => {
             </div>
             <div className="flex flex-col gap-6">
               <h3 className="font-display text-xl md:text-3xl">
-                ¿Construyendo algo nuevo? Comparte algunos detalles y me pondré en contacto contigo
+                Cuentame sobre tu idea o proyecto y te ayudaré a hacerlo realidad.
               </h3>
-              <div className="flex flex-col gap-3">
-                <span className="contact-info">Dejame tus datos</span>
-                <div className="flex flex-col gap-2">
-                  <div className="flex items-center gap-5 p-5 bg-neutral-800 rounded-md">
-                    <label className="text-neutral-400 flex-shrink-0">Nombre</label>
-                    <input
-                      type="text"
-                      className="focus:outline-none text-right w-full flex-grow-0 bg-transparent"
-                      placeholder="Bruce Wayne"
-                    />
-                  </div>
-                  <div className="flex items-center gap-5 p-5 bg-neutral-800 rounded-md">
-                    <label className="text-neutral-400 flex-shrink-0">Empresa</label>
-                    <input
-                      type="text"
-                      className="focus:outline-none text-right w-full flex-grow-0 bg-transparent"
-                      placeholder="Startup, Co"
-                    />
-                  </div>
-                  <div className="flex items-center gap-5 p-5 bg-neutral-800 rounded-md">
-                    <label className="text-neutral-400 flex-shrink-0">Correo Electrónico</label>
-                    <input
-                      type="email"
-                      className="focus:outline-none text-right w-full flex-grow-0 bg-transparent"
-                      placeholder="bruce.wayne@company.co"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col gap-3">
-                <span className="contact-info">Información del proyecto</span>
-                <div className="flex flex-col gap-2">
-                  <div className="flex items-center gap-5 p-5 bg-neutral-800 rounded-md justify-between">
-                    <label className="text-neutral-400 flex-shrink-0">Tipo de proyecto</label>
-                    <select className="focus:outline-none text-right flex-grow-0 bg-transparent">
-                      <option value="Diseño">Diseño</option>
-                      <option selected value="Desarrollo">Desarrollo</option>
-                      <option value="Diseño y desarrollo">Diseño y desarrollo</option>
-                    </select>
-                  </div>
-                  <div className="flex items-center gap-5 p-5 bg-neutral-800 rounded-md justify-between">
-                    <label className="text-neutral-400 flex-shrink-0">Budged range</label>
-                    <select className="focus:outline-none text-right flex-grow-0 bg-transparent">
-                      <option selected value="$14,000 — $22,000">$14,000 — $22,000</option>
-                    </select>
-                  </div>
-                  <div className="flex items-center gap-5 bg-neutral-800 rounded-md justify-between relative">
-                    <label className="absolute top-0 mt-4 ml-5 left-0 text-neutral-400 flex-shrink-0">Message</label>
-                    <textarea
-                      placeholder="Describe tu proyecto en algunos párrafos..."
-                      rows={3}
-                      className="px-5 pb-5 pt-12 focus:outline-none w-full flex-grow-0 bg-transparent"
-                    />
-                  </div>
-                  <button className="mt-2 flex items-center font-semibold justify-center border-2 border-transparent rounded-xl px-4 py-4 transition-all duration-300 bg-white text-gray-950 hover:ring-4 hover:ring-[#FFA36F40] resize-none">
-                    Enviar detalles
-                  </button>
-                </div>
-              </div>
+              <FormQuote />
             </div>
           </div>
         </motion.div>
