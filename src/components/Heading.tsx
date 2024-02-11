@@ -39,7 +39,7 @@ export default function Heading() {
         <span
           onMouseEnter={onMouseEnterInterfaces}
           onMouseLeave={onMouseLeaveInterfaces}
-          className="relative inline-block z-[9999] text-[#FFB3C0]"
+          className="relative inline-block z-[9950] text-[#FFB3C0]"
         >
           Interfaces
         </span>.
@@ -61,7 +61,7 @@ export default function Heading() {
         <span
           onMouseEnter={onMouseEnterSystems}
           onMouseLeave={onMouseLeaveSystems}
-          className="relative inline-block z-[9999] text-[#FFA36F]"
+          className="relative inline-block z-[9950] text-[#FFA36F]"
         >
           Sistemas
         </span>.
