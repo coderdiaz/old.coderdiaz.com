@@ -13,6 +13,7 @@ export default {
         marquee2: 'marquee2 90s linear infinite',
         marqueeReverse: 'marqueeReverse 50s linear infinite',
         marqueeReverse2: 'marqueeReverse2 50s linear infinite',
+        spinSlow: 'spin 6s linear infinite',
       },
       keyframes: {
         marquee: {
