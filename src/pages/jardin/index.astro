@@ -1,21 +1,22 @@
 ---
+import { getCollection, getEntry } from 'astro:content';
 import Article from '@/components/Article.astro';
 import Container from '@/components/Container.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('posts')).sort(
   (a, b) =>  b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
 );
----
 
-<BaseLayout>
+const entry = await getEntry('pages', 'jardin');
+---
+<BaseLayout entry={entry}>
   <section class="pt-28 pb-48">
     <Container>
       <div class="grid md:grid-cols-6 gap-12">
         <div class="md:col-span-2 mb-8 md:mb-0">
-          <h2 class="text-white font-display text-4xl">
-            🪴 Jardín digital
+          <h2 class="text-white font-display font-bold text-4xl">
+            Jardín digital 🌱
           </h2>
         </div>
         <div class="md:col-span-4 flex flex-col gap-14">
