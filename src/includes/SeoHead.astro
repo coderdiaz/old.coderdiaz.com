@@ -12,14 +12,14 @@ const { title, seo } = Astro.props;
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
 <meta property="og:type" content={seo?.type ?? 'website'} />
-<meta property="og:title" content={`${seo?.title} — Javier Diaz`} />
+<meta property="og:title" content={seo?.title} />
 <meta property="og:description" content={seo?.description} />
-<meta property="og:image" content={seo?.image} />
+<meta property="og:image" content={seo?.image.src} />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:creator" content="@coderdiaz" />
-<meta property="twitter:title" content={`${seo?.title} — Javier Diazo`} />
+<meta property="twitter:title" content={seo?.title} />
 <meta property="twitter:description" content={seo?.description} />
-<meta property="twitter:image" content={seo?.image} />
+<meta property="twitter:image" content={seo?.image.src} />
 <title>{ title || 'Javier Diaz — Ingeniería & Diseño'}</title>
 { analytics && (
   <script defer data-domain="coderdiaz.com" src="https://analytics.coderdiaz.com/js/script.js"></script>
