@@ -13,6 +13,7 @@ services:
 seo:
   title: Acceso a estudios clínicos para tus pacientes de forma sencilla.
   description: This is a sample description for the project and it should be updated later with the real one.
+  image: ./featured.png
   type: article
   keywords: panda salud, estudios clínicos, software para estudios clínicos, software para clínicas, software para hospitales, software para laboratorios
 ---

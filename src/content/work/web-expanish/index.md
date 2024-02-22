@@ -14,6 +14,7 @@ services:
 seo:
   title: Rediseño y desarrollo del sitio web expanish.com
   description: This is a sample description for the project and it should be updated later with the real one.
+  image: ./featured.png
   type: article
   keywords: expanish, desarrollo web, next.js, static site generation, rediseño web, diseño web, diseño ux/ui, diseño de experiencia de usuario, diseño de interfaz de usuario
 ---

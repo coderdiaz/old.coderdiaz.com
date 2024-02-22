@@ -14,6 +14,7 @@ services:
 seo:
   title: Administra tu academia de baile de forma sencilla
   description: This is a sample description for the project and it should be updated later with the real one.
+  image: ./featured.png
   type: article
   keywords: academia de baile, software de gestión para escuelas de baile, programa gestion academia baile, software academia baile, software para academia de danza
 ---
