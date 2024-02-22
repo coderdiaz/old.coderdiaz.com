@@ -33,7 +33,7 @@ export default function Heading() {
         <div id="first" className="absolute text-sm md:text-base font-sans bg-yellow-300 text-yellow-950 shadow-md top-0 mt-10 left-0 px-3 py-1 rounded-full opacity-0 flex items-center gap-1 z-50">
           <Shapes size={16} strokeWidth={2.5} />
           <span className="inline">
-            UI Kits
+            Visual Design
           </span>
         </div>
         <span
