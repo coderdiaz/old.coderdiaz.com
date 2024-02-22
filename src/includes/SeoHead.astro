@@ -1,0 +1,32 @@
+---
+import { getImage } from 'astro:assets';
+import { generateAbsoluteUrl } from '@/lib/utils'; 
+
+type Props = {
+  title?: string;
+  seo?: any;
+}
+const analytics = import.meta.env.ENABLED_ANALYTICS;
+const { title, seo } = Astro.props;
+const image = await getImage({ src: seo.image, format: 'png' });
+const imageUri = generateAbsoluteUrl(image.src);
+---
+<meta charset="utf-8" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="sitemap" href="/sitemap-index.xml" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+<meta property="og:type" content={seo?.type ?? 'website'} />
+<meta property="og:title" content={seo?.title} />
+<meta property="og:description" content={seo?.description} />
+<meta property="og:image" content={imageUri} />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:creator" content="@coderdiaz" />
+<meta property="twitter:title" content={seo?.title} />
+<meta property="twitter:description" content={seo?.description} />
+<meta property="twitter:image" content={imageUri} />
+<title>{ title || 'Javier Diaz — Ingeniería & Diseño'}</title>
+{ analytics && (
+  <script defer data-domain="coderdiaz.com" src="https://analytics.coderdiaz.com/js/script.js"></script>
+)}
+<slot />

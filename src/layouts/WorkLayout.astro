@@ -1,0 +1,76 @@
+---
+import '@/styles/roobert.css';
+import { Image } from 'astro:assets';
+import { Quote } from '@/components/Quote';
+import { Navigation } from '@/components/Navigation';
+import Container from '@/components/Container.astro';
+import Cursor from '@/components/Cursor';
+import Header from '@/includes/Header.astro';
+import Footer from '@/includes/Footer.astro';
+import SeoHead from '@/includes/SeoHead.astro';
+
+const { entry } = Astro.props;
+---
+<html lang="es">
+  <head>
+    <SeoHead
+      seo={entry.data.seo}
+      title={`${entry.data.client} — Javier Diaz`}
+    />
+  </head>
+  <body class="bg-[#100F0F]">
+    <Header />
+    <main>
+      <section class="pt-0 pb-20">
+        <Container class="max-w-screen-lg">
+          <article>
+            <div class="w-full h-full bg-white my-8 rounded-2xl overflow-hidden">
+              <Image class="object-cover" src={entry.data.featuredImage} alt={entry.data.title} />
+            </div>
+            <div class="flex flex-col gap-3 text-white md:px-20 mb-6 md:mb-14">
+              <span class="text-lg text-[#FFA36F]">{entry.data.client}</span>
+              <h1 class="text-3xl md:text-4xl font-display font-semibold text-balance">{entry.data.title}</h1>
+            </div>
+            <div class="md:px-20 grid md:grid-cols-7 gap-8 md:gap-4">
+              <div class="md:col-span-2 order-2 md:order-1">
+                <div class="flex flex-col gap-6 sticky top-10">
+                  <div class="flex flex-col gap-2 text-white text-lg">
+                    <span class="text-stone-500">Año</span>
+                    <span class="font-medium">{entry.data.year}</span>
+                  </div>
+                  <div class="flex flex-col gap-2 text-white text-lg">
+                    <span class="text-stone-500">Servicios</span>
+                    <div class="flex flex-col gap-1">
+                      {entry.data.services.map((service: string) => (
+                        <span class="font-medium">{service}</span>
+                      ))}
+                    </div>
+                  </div>
+                  {entry.data.liveUri && (
+                    <div class="flex flex-col gap-2 text-white text-lg">
+                      <span class="text-stone-500">Explorar en</span>
+                      <div class="flex flex-col gap-1">
+                        <a href={entry.data.liveUri} target="_blank" rel="noopener noreferrer" class="font-medium text-[#FFA36F]">
+                          Ir al sitio web
+                        </a>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div class="md:col-span-5 order-1 md:order-2">
+                <div class="prose prose-invert prose-stone">
+                  <slot />
+                </div>
+              </div>
+            </div>
+          </article>
+        </Container>
+      </section>
+    </main>
+    <Footer />
+    <Cursor client:load />
+    <Navigation client:idle />
+    <Quote client:idle />
+  </body>
+</html>

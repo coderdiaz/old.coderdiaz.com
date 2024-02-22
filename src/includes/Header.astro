@@ -1,0 +1,22 @@
+---
+import Container from '@/components/Container.astro';
+import { MotionHeader } from '@/components/MotionHeader';
+import Logotype from '@/components/Logotype.astro';
+import { GetaQuote } from '@/components/GetaQuote';
+---
+<MotionHeader client:idle>
+  <Container>
+    <div class="flex gap-12 justify-between items-center">
+      <a href="/" aria-label="Javier Diaz — coderdiaz.com">
+        <Logotype />
+      </a>
+      <div class="flex items-center gap-5">
+        <!-- <nav class="hidden md:flex items-center gap-3 text-white">
+          <a href="/sobre-mi/" class="font-medium text-sm">Sobre mí</a>
+          <a href="/proyectos/" class="font-medium text-sm">Proyectos</a>
+        </nav> -->
+        <GetaQuote client:load />
+      </div>
+    </div>
+  </Container>
+</MotionHeader>

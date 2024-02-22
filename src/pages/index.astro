@@ -1,39 +1,52 @@
 ---
 import { Image } from 'astro:assets';
+import { getCollection, getEntry } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Container from '@/components/Container.astro';
 import Project from '@/components/Project.astro';
 import Article from '@/components/Article.astro';
-import Logotype from '@/assets/images/Logotype.svg';
+import Heading from '@/components/Heading';
+import { cn } from '@/lib/utils';
 import Family from '@/assets/images/Family@2x.jpg';
 import Working from '@/assets/images/Working@2x.jpg';
+
+const work =  await getCollection('work');
+const posts = (await getCollection('posts')).sort(
+  (a, b) =>  b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
+);
+
+const latestPosts = posts.slice(0, 3);
+
+const entry = await getEntry('pages', 'homepage');
 ---
-<BaseLayout>
-  <section class="pt-32 md:pt-56 pb-12">
+<BaseLayout entry={entry}>
+  <section class="pt-14 md:pt-24 pb-16">
     <Container>
       <div class="flex flex-col gap-6">
-        <Image src={Logotype} width={36} alt="Sitio web personal de Javier Diaz @coderdiaz" />
-        <div class="flex flex-col gap-3 ">
+        <div class="flex flex-col gap-3">
           <span class="text-lg text-gray-300">Hola, soy Javier Diaz</span>
           <div class="relative w-full lg:w-[52rem]">
-            <span class="absolute -left-16 top-0 mb-0 hidden font-mono text-[10rem] text-white leading-none opacity-5 lg:flex">*</span>
-            <h1 class="font-display text-white font-medium text-4xl md:text-6xl">
-              Creo <span class="text-[#FFA36F]">productos digitales</span>. <span class="text-[#FFB3C0]">Interfaces</span>. Sistemas.
-            </h1>
+            <span class="absolute left-0 -ml-16 mt-16 top-0 mb-0 hidden font-mono text-[10rem] text-white leading-none opacity-5 lg:flex">*</span>
+           <Heading client:idle />
           </div>
-          <p class="text-gray-300 md:text-lg md:w-[36rem]">
-            Enfocado en construir las mejores soluciones en productos digitales que mejoren la productividad de las personas y sus flujos de trabajo a través de la tecnología y el diseño.
+          <p class="text-gray-200 md:text-lg md:w-[36rem]">
+            Me dedico a crear soluciones en productos digitales que mejoren la productividad de las personas y sus flujos de trabajo a través de la tecnología y el diseño.
           </p>
         </div>
         <div class="flex gap-4 items-center">
-          <a href="#" class="bg-white font-medium rounded-xl text-black px-4 py-2.5">
+          <button 
+            data-cal-link="coderdiaz/cuentame-sobre-tu-proyecto"
+            data-cal-namespace="cuentame-sobre-tu-proyecto"
+            data-cal-config='{"layout":"month_view"}'
+            class="border-2 border-black font-medium w-max text-black rounded-full px-6 py-3 bg-white transition-all duration-300 hover:ring-4 hover:ring-[#FFA36F75] focus:outline-none focus:ring-2 focus:ring-[#FFA36F75] hover:scale-95"
+          >
             Agendar una llamada
-          </a>
+          </button>
         </div>
       </div>
     </Container>
   </section>
-  <section class="pt-8 pb-12 md:py-20 overflow-hidden">
+  <section class="pt-8 pb-12 md:py-20 md:pb-28 overflow-hidden">
     <Container>
       <div class="grid lg:grid-cols-2 gap-16 md:gap-32 items-center justify-center">
         <div class="lg:aspect-square h-72 lg:h-auto relative">
@@ -45,7 +58,7 @@ import Working from '@/assets/images/Working@2x.jpg';
           </div>
         </div>
         <div class="text-white font-medium text-xl flex flex-col gap-5 relative w-full md:w-[34rem] lg:w-full">
-          <p>Soy un freelance multidiciplinario trabajando desde la <span class="text-[#FFA36F]">Ciudad de México, México</span>. He invertido los últimos 9+ años colaborando con early-startups a desarrollar sus productos tecnológicos, sitios web, apps e interfaces.</p>
+          <p>Soy un freelancer multidisciplinario trabajando desde la <span class="text-[#FFA36F]">Ciudad de México, México</span>. He invertido los últimos 9+ años colaborando con early-startups a desarrollar sus productos tecnológicos, sitios web, apps e interfaces.</p>
           <span class="absolute -left-16 top-0 mt-20 mb-0 hidden font-mono text-[10rem] text-white leading-none opacity-5 lg:flex">*</span>
           <p>
             Uno fuerzas con fundadores y equipos de alto rendimiento para crear las mejores <span class="text-[#FFB3C0]">experiencias digitales</span> para sus usuarios. 
@@ -57,53 +70,31 @@ import Working from '@/assets/images/Working@2x.jpg';
   <section class="pt-32 md:pt-44 pb-20">
     <Container>
       <div class="flex justify-center">
-        <h2 class="font-display text-4xl text-center text-white text-balance w-96 -translate-y-12">
+        <h2 class="font-display text-4xl lg:text-5xl text-center font-bold text-white text-balance w-[32rem] -translate-y-12">
           Experiencias creadas desde 2019
         </h2>
       </div>
-      <div class="">
-        <div class="sticky top-0 flex flex-col gap-12">
-          <Project />
-          <Project class="top-[5rem]"  />
-          <Project />
+      <div class="relative">
+        <div class="sticky flex flex-col gap-12">
+          {work.map((item, index: number) => (
+            <Project class={cn({ 'top-[7.5rem]': index > 0 })} item={item} />
+          ))}
         </div>
       </div>
     </Container>
   </section>
-  <section class="pt-10 pb-40">
+  <section class="pt-4 md:pt-10 pb-52">
     <Container>
-      <div class="grid md:grid-cols-6">
-        <div class="col-span-2 mb-8 md:mb-0">
-          <h2 class="text-white font-display text-4xl">Magazine</h2>
-        </div>
-        <div class="col-span-4 flex flex-col gap-14">
-          <Article />
-          <Article />
-          <Article />
-        </div>
-      </div>
-    </Container>
-  </section>
-  <section id="services" class="py-20 bg-[#FFA36F] rounded-t-3xl">
-    <Container>
-      <div class="grid md:grid-cols-2 gap-12 md:gap-0">
-        <div class="flex flex-col gap-4 text-white">
-          <span class="font-medium text-lg text-black">Servicios</span>
-          <h2 class="text-5xl font-display text-orange-950/80 md:w-[20rem] lg:w-[28rem] mb-6">
-            Llevemos tu <span class="text-black">idea</span> de <span class="text-black">0 → 1</span>
+      <div class="grid md:grid-cols-6 gap-12">
+        <div class="md:col-span-2">
+          <h2 class="text-white font-display font-bold text-4xl">
+            Jardín digital 🌱
           </h2>
-          <a href="#" class="border-2 border-black font-medium w-max text-black rounded-full text-xl px-6 py-3 hover:bg-white transition-colors duration-300">
-            hola@coderdiaz.com
-          </a>
         </div>
-        <div class="flex flex-col tezt-white">
-          <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Aplicaciones móviles</span>
-          <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Diseño web</span>
-          <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Interfaces de usuario</span>
-          <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Experiencia de usuario</span>
-          <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Diseño visual</span>
-          <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Desarrollo Frontend</span>
-          <span class="border-b-2 border-black/25 py-3 text-lg font-medium font-mono">Desarrollo Backend</span>
+        <div class="md:col-span-4 flex flex-col gap-14">
+          {latestPosts.map((article) => (
+            <Article item={article} />
+          ))}
         </div>
       </div>
     </Container>

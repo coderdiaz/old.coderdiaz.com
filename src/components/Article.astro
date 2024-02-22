@@ -1,21 +1,31 @@
 ---
 import { ArrowRightIcon } from 'lucide-react';
+type Props = {
+  item: any;
+}
+const { item } = Astro.props;
 ---
 <article>
-  <a href="#" class="group">
-    <div class="flex gap-6 justify-start group-hover:bg-white/5 group-hover:ring-[2rem] rounded-xl ring-white/5 transition-all">
+  <a href={`/jardin/${item.slug}/`} class="group">
+    <div class="flex gap-8 justify-start group-hover:bg-white/5 group-hover:ring-[2rem] rounded-xl ring-white/5 transition-all">
       <div class="flex flex-col gap-4 w-full">
         <div class="flex flex-col text-white gap-1">
-          <time class="font-medium text-gray-400" datetime="">24 de octubre de 2024</time>
-          <h3 class="text-2xl text-balance">Mejorando el rendimiento del sitio web expanish.com</h3>
+          <time class="font-medium text-gray-400" datetime={item.data.publishedAt}>
+            {new Date(item.data.publishedAt).toLocaleDateString('es-MX', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </time>
+          <h3 class="font-display text-2xl font-semibold text-pretty">{item.data.title}</h3>
         </div>
-        <div class="flex gap-3 items-center text-white">
-          <span class="border border-gray-600 text-gray-100 px-3 py-2 leading-none rounded-xl text-sm">Performance</span>
-          <span class="border border-gray-600 text-gray-100 px-3 py-2 leading-none rounded-xl text-sm">Next.js</span>
-          <span class="border border-gray-600 text-gray-100 px-3 py-2 leading-none rounded-xl text-sm">Desarrollo</span>
+        <div class="flex gap-3 flex-wrapitems-center text-white">
+          {item.data.tags.map((tag: string) => (
+            <span class="border border-gray-600 text-gray-100 px-3 py-2 leading-none rounded-xl text-sm">{tag}</span>
+          ))}
         </div>
       </div>
-      <button class="flex-shrink-0 w-8 h-8 border-2 group-hover:border-white/20 border-white/10 rounded-lg p-1 group-hover:bg-white/5 transition-colors flex items-center justify-center">
+      <button class="hidden sm:flex flex-shrink-0 w-8 h-8 border-2 group-hover:border-white/20 border-white/10 rounded-lg p-1 group-hover:bg-white/5 transition-colors items-center justify-center">
         <ArrowRightIcon className="text-white" size={24} />
       </button>
     </div>
