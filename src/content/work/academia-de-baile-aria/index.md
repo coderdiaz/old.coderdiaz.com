@@ -11,7 +11,6 @@ year: 2023
 services:
   - Apps
   - Diseño UX/UI
-liveUri: https://somosaria.com
 seo:
   title: Administra tu academia de baile de forma sencilla
   description: This is a sample description for the project and it should be updated later with the real one.
