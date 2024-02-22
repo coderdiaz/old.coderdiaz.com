@@ -42,7 +42,16 @@ const postCollection = defineCollection({
   }),
 });
 
+const pageCollection = defineCollection({
+  type: 'content',
+  schema: ({ image }) => z.object({
+    title: z.string(),
+    seo: seoSchema(image),
+  }),
+})
+
 export const collections = {
   work: workCollection,
   posts: postCollection,
+  pages: pageCollection,
 };
