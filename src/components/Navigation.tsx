@@ -57,19 +57,19 @@ export const Navigation = () => {
           <div className="flex flex-col gap-3">
             <span className="uppercase tracking-tight font-display text-xs text-stone-400">coderdiaz.com</span>
             <nav className="flex flex-col gap-2">
-              <a href="#" className="text-white font-semibold text-xl">Inicio</a>
-              <a href="#" className="text-white font-semibold text-xl">Jardín Digital</a>
-              <a href="#" className="text-white font-semibold text-xl">Sobre mí</a>
-              <a href="#" className="text-white font-semibold text-xl">Proyectos</a>
+              <a href="/" className="text-white font-semibold text-xl">Inicio</a>
+              <a href="/jardin/" className="text-white font-semibold text-xl">Jardín Digital</a>
+              {/* <a href="#" className="text-white font-semibold text-xl">Sobre mí</a> */}
+              {/* <a href="#" className="text-white font-semibold text-xl">Proyectos</a> */}
             </nav>
           </div>
           <div className="flex flex-col gap-3">
             <span className="uppercase tracking-tight font-display text-xs text-stone-400">Sígueme</span>
             <nav className="flex flex-col gap-2">
-              <a href="#" className="text-white font-semibold">X.com</a>
-              <a href="#" className="text-white font-semibold">Layers</a>
-              <a href="#" className="text-white font-semibold">Read.cv</a>
-              <a href="#" className="text-white font-semibold">GitHub</a>
+              <a href="https://x.com/coderdiaz" rel="noopener noreferrer" className="text-white font-semibold">X.com</a>
+              <a href="https://layers.to/coderdiaz" rel="noopener noreferrer" className="text-white font-semibold">Layers</a>
+              <a href="https://read.cv/coderdiaz" rel="noopener noreferrer" className="text-white font-semibold">Read.cv</a>
+              <a href="https://github.com/coderdiaz" rel="noopener noreferrer" className="text-white font-semibold">GitHub</a>
             </nav>
           </div>
         </div>
