@@ -72,10 +72,10 @@ const latestPosts = posts.slice(0, 3);
           Experiencias creadas desde 2019
         </h2>
       </div>
-      <div class="">
-        <div class="sticky top-0 flex flex-col gap-12">
+      <div class="relative">
+        <div class="sticky flex flex-col gap-12">
           {work.map((item, index: number) => (
-            <Project class={cn({ 'top-[5rem]': index > 0 })} item={item} />
+            <Project class={cn({ 'top-[7.5rem]': index > 0 })} item={item} />
           ))}
         </div>
       </div>

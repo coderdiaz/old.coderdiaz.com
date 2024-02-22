@@ -43,6 +43,16 @@ const { entry } = Astro.props;
                       ))}
                     </div>
                   </div>
+                  {entry.data.liveUri && (
+                    <div class="flex flex-col gap-2 text-white text-lg">
+                      {/* <span class="text-stone-500"></span> */}
+                      <div class="flex flex-col gap-1">
+                        <a href={entry.data.liveUri} target="_blank" rel="noopener noreferrer" class="font-medium text-[#FFA36F]">
+                          Ir al sitio web
+                        </a>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
               <div class="md:col-span-5 order-1 md:order-2">
