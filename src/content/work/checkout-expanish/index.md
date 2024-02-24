@@ -15,7 +15,7 @@ services:
 seo:
   title: Mejorando la experiencia de compra para Expanish
   description: Diseño y desarrollo del nuevo y mejorado proceso de compra para Expanish
-  image: ./featured.png
+  image: ./meta.png
   type: article
   keywords: expanish, desarrollo web, frontend development, backend development, next.js, checkout, rediseño, diseño web, diseño ux/ui, diseño de experiencia de usuario, diseño de interfaz de usuario
 ---

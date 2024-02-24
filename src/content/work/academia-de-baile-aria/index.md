@@ -14,7 +14,7 @@ services:
 seo:
   title: Administra tu academia de baile de forma sencilla
   description: Desarrollo y diseño de una aplicación móvil para la gestión de una academia de baile.
-  image: ./featured.png
+  image: ./meta.png
   type: article
   keywords: academia de baile, software de gestión para escuelas de baile, programa gestion academia baile, software academia baile, software para academia de danza
 ---

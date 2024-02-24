@@ -13,7 +13,7 @@ services:
 seo:
   title: Panda Salud — Acceso a estudios clínicos
   description: Diseño de interfaz y mejora de la experiencia de usuario para la plataforma de Panda Salud.
-  image: ./featured.png
+  image: ./meta.png
   type: article
   keywords: panda salud, estudios clínicos, software para estudios clínicos, software para clínicas, software para hospitales, software para laboratorios
 ---

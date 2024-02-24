@@ -15,7 +15,7 @@ services:
 seo:
   title: Rediseño y desarrollo del sitio web expanish.com
   description: Diseño y desarrollo del nuevo sitio web para Expanish
-  image: ./featured.png
+  image: ./meta.png
   type: article
   keywords: expanish, desarrollo web, next.js, static site generation, rediseño web, diseño web, diseño ux/ui, diseño de experiencia de usuario, diseño de interfaz de usuario
 ---
