@@ -21,5 +21,21 @@ export default defineConfig({
       status: 301,
       destination: '/jardin/2021-en-retrospectiva',
     },
+    '/academia-baile-aria': {
+      status: 301,
+      destination: '/academia-de-baile-aria',
+    },
+    '/crossfit-quiniela': {
+      status: 301,
+      destination: '/',
+    },
+    '/expanish-post': {
+      status: 301,
+      destination: '/',
+    },
+    '/expanish-sitio-web': {
+      status: 301,
+      destination: '/web-expanish',
+    },
   },
 });
