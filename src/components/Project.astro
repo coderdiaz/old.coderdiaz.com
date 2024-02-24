@@ -10,7 +10,7 @@ type Props = {
 const { class: className, item } = Astro.props;
 const services = item.data.services.slice(0, 2);
 ---
-<div class={cn('sticky top-[4.5rem] overflow-hidden', className)}>
+<div class={cn('sticky top-[4rem] overflow-hidden', className)}>
   <a href={`/${item.slug}/`} class="project relative w-full h-full bg-white group">
     <article class="flex flex-col gap-1.5 bg-white shadow-sm p-1.5 rounded-2xl overflow-hidden">
       <div class="flex justify-between items-center px-4 py-2 rounded-t-xl" style={{ backgroundColor: item.data.color ? item.data.color :  '#FFA36F'}}>
