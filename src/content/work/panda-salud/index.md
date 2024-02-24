@@ -11,8 +11,8 @@ year: 2023
 services:
   - Diseño UX/UI
 seo:
-  title: Acceso a estudios clínicos para tus pacientes de forma sencilla.
-  description: This is a sample description for the project and it should be updated later with the real one.
+  title: Panda Salud — Acceso a estudios clínicos
+  description: Diseño de interfaz y mejora de la experiencia de usuario para la plataforma de Panda Salud.
   image: ./featured.png
   type: article
   keywords: panda salud, estudios clínicos, software para estudios clínicos, software para clínicas, software para hospitales, software para laboratorios
