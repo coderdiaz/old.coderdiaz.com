@@ -13,15 +13,26 @@ const imageUri = generateAbsoluteUrl(image.src);
 ---
 <meta charset="utf-8" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 <link rel="sitemap" href="/sitemap-index.xml" />
-<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
+<meta name="robots" content="index, follow" />
+<meta name="keywords" content={seo?.keywords} />
+<!-- OpenGraph Meta -->
 <meta property="og:type" content={seo?.type ?? 'website'} />
+<meta property="or:site_name" content="Javier Diaz — Ingeniería & Diseño para todos" />
 <meta property="og:title" content={seo?.title} />
 <meta property="og:description" content={seo?.description} />
 <meta property="og:image" content={imageUri} />
+<meta property="og:image:width" content="1920" />
+<meta property="og:image:height" content="1080" />
+<!-- Twitter Meta -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:creator" content="@coderdiaz" />
+<meta property="twitter:site" content="@coderdiaz" />
 <meta property="twitter:title" content={seo?.title} />
 <meta property="twitter:description" content={seo?.description} />
 <meta property="twitter:image" content={imageUri} />
