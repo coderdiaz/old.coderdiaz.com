@@ -75,9 +75,12 @@ const entry = await getEntry('pages', 'homepage');
         </h2>
       </div>
       <div class="relative">
-        <div class="sticky flex flex-col gap-12">
+        <div class="sticky top-0 flex flex-col gap-12">
           {work.map((item, index: number) => (
-            <Project class={cn({ 'top-[7.5rem]': index > 0 })} item={item} />
+            <Project class={cn({
+              'top-[7rem]': index == 1,
+              'top-[10rem]': index == 2,
+            })} item={item} />
           ))}
         </div>
       </div>

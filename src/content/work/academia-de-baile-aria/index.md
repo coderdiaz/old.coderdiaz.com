@@ -13,7 +13,7 @@ services:
   - Diseño UX/UI
 seo:
   title: Administra tu academia de baile de forma sencilla
-  description: This is a sample description for the project and it should be updated later with the real one.
+  description: Desarrollo y diseño de una aplicación móvil para la gestión de una academia de baile.
   image: ./featured.png
   type: article
   keywords: academia de baile, software de gestión para escuelas de baile, programa gestion academia baile, software academia baile, software para academia de danza
