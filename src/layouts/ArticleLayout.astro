@@ -16,7 +16,9 @@ const { entry } = Astro.props;
     <SeoHead
       seo={entry.data.seo}
       title={`${entry.data.title} — Javier Diaz`}
-    />
+    >
+      <link rel="canonical" href={`https://coderdiaz.com/jardin/${entry.slug}`} />
+    </SeoHead>
   </head>
   <body class="bg-[#100F0F]">
     <Header />

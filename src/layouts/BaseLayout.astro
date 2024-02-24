@@ -11,6 +11,11 @@ import { Marquee } from '@/components/Marquee';
 import { MarqueeReverse } from '@/components/Marquee';
 
 const { entry } = Astro.props;
+
+const getSlug = (slug: string) => {
+  if (entry.slug === 'homepage') return '';
+  return '/' + entry.slug;
+}
 ---
 <html lang="es">
   <head>
@@ -20,6 +25,7 @@ const { entry } = Astro.props;
         Cal('init', 'cuentame-sobre-tu-proyecto', {origin:'https://cal.com'});
         Cal.ns['cuentame-sobre-tu-proyecto']('ui', {'styles':{'branding':{'brandColor':'#ffa36f'}},'hideEventTypeDetails':false,'layout':'month_view'});
       </script>
+      <link rel="canonical" href={`https://coderdiaz.com${getSlug(entry.slug)}`} />
     </SeoHead>
   </head>
   <body class="flex flex-col bg-[#100F0F] min-h-screen">
