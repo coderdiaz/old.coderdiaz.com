@@ -13,8 +13,8 @@ import { MarqueeReverse } from '@/components/Marquee';
 const { entry } = Astro.props;
 
 const getSlug = (slug: string) => {
-  if (entry.slug === 'homepage') return '';
-  return '/' + entry.slug;
+  if (slug === 'homepage') return '';
+  return '/' + slug;
 }
 ---
 <html lang="es">
