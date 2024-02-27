@@ -21,9 +21,10 @@ const imageUri = generateAbsoluteUrl(image.src);
 <meta name="generator" content={Astro.generator} />
 <meta name="robots" content="index, follow" />
 <meta name="keywords" content={seo?.keywords} />
+<meta name="description" content={seo?.description} />
 <!-- OpenGraph Meta -->
 <meta property="og:type" content={seo?.type ?? 'website'} />
-<meta property="or:site_name" content="Javier Diaz — Ingeniería & Diseño para todos" />
+<meta property="og:site_name" content="Javier Diaz — Ingeniería & Diseño para todos" />
 <meta property="og:title" content={seo?.title} />
 <meta property="og:description" content={seo?.description} />
 <meta property="og:image" content={imageUri} />
