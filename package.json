@@ -17,7 +17,7 @@
     "@formcarry/react": "^1.0.4",
     "@nanostores/react": "^0.7.1",
     "@tailwindcss/typography": "^0.5.10",
-    "astro": "^4.3.3",
+    "astro": "^4.4.5",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.3",
     "lucide-react": "^0.323.0",
