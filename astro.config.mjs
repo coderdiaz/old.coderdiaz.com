@@ -2,40 +2,41 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://coderdiaz.com',
   trailingSlash: 'always',
-  integrations: [react(), tailwind(), sitemap()],
+  integrations: [react(), tailwind(), sitemap(), mdx()],
   redirects: {
     '/garden/como-he-construido-mi-sitio-web-con-nextjs': {
       status: 301,
-      destination: '/',
+      destination: '/'
     },
     '/garden/actualizacion-octubre': {
       status: 301,
-      destination: '/jardin/actualizacion-octubre-2023/',
+      destination: '/jardin/actualizacion-octubre-2023/'
     },
     '/garden/2021-en-retrospectiva': {
       status: 301,
-      destination: '/jardin/2021-en-retrospectiva',
+      destination: '/jardin/2021-en-retrospectiva'
     },
     '/academia-baile-aria': {
       status: 301,
-      destination: '/academia-de-baile-aria',
+      destination: '/academia-de-baile-aria'
     },
     '/crossfit-quiniela': {
       status: 301,
-      destination: '/',
+      destination: '/'
     },
     '/expanish-post': {
       status: 301,
-      destination: '/',
+      destination: '/'
     },
     '/expanish-sitio-web': {
       status: 301,
-      destination: '/web-expanish',
-    },
-  },
+      destination: '/web-expanish'
+    }
+  }
 });
