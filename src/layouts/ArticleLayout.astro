@@ -11,7 +11,7 @@ import SeoHead from '@/includes/SeoHead.astro';
 
 const { entry } = Astro.props;
 ---
-<html lang="es">
+<html lang="es" class="md:text-xl">
   <head>
     <SeoHead
       seo={entry.data.seo}
@@ -23,7 +23,7 @@ const { entry } = Astro.props;
   <body class="bg-[#100F0F]">
     <Header />
     <main>
-      <Container class="max-w-screen-md">
+      <Container>
         <article class="pt-16 pb-24 md:pb-40">
           <div class="flex flex-col gap-8">
             <div class="flex flex-col md:px-8 gap-4 text-white">

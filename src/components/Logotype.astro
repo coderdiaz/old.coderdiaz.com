@@ -1,4 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="none">
+---
+import { cn } from '@/lib/utils';
+
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+---
+
+<svg class:list={cn(['w-8 h-8', className])} viewBox="0 0 33 33" xmlns="http://www.w3.org/2000/svg" fill="none">
   <g filter="url(#a)">
     <path fill="#FFA36F" stroke="#000" stroke-width=".16"
       d="M9.22 16.24h-7.6l1.22 5.66 6.38 6.88 10.2 1.78 9.05-6.31 2.1-8.5-7.6.5-2.02 5.9-5.74.97-4.2-2.19-1.79-4.69Z" />

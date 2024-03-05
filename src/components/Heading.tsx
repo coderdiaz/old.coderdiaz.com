@@ -27,10 +27,10 @@ export default function Heading() {
   }
 
   return (
-    <h1 className="font-display text-white font-bold text-4xl md:text-7xl inline relative">
+    <h1 className="font-display text-white font-bold text-4xl md:text-5xl lg:text-7xl inline relative">
       Construyo productos digitales.
       <div className="inline relative">
-        <div id="first" className="absolute text-sm md:text-base font-sans bg-yellow-300 text-yellow-950 shadow-md top-0 mt-10 left-0 px-3 py-1 rounded-full opacity-0 flex items-center gap-1 z-50">
+        <div id="first" className="absolute text-sm md:text-base font-sans bg-yellow-300 text-yellow-950 shadow-md top-0 mt-10 left-0 px-3 py-1 rounded-full opacity-0 hidden md:flex items-center gap-1 z-50">
           <Shapes size={16} strokeWidth={2.5} />
           <span className="inline">
             Visual Design
@@ -43,7 +43,7 @@ export default function Heading() {
         >
           Interfaces
         </span>.
-        <div id="second" className="absolute text-sm md:text-base font-sans bg-blue-300 text-blue-950 shadow-md bottom-0 mb-5 right-0 px-3 py-1 rounded-full opacity-0 flex items-center gap-1 z-50">
+        <div id="second" className="absolute text-sm md:text-base font-sans bg-blue-300 text-blue-950 shadow-md bottom-0 mb-5 right-0 px-3 py-1 rounded-full opacity-0 hidden md:flex items-center gap-1 z-50">
           <LayoutTemplate size={16} strokeWidth={2.5} />
           <span className="inline">
             Marketing Sites
@@ -52,7 +52,7 @@ export default function Heading() {
       </div>
       <br />
       <div className="inline relative">
-        <div id="firstSystems" className="absolute text-sm md:text-base font-sans bg-teal-300 text-teal-950 shadow-md bottom-0 mb-5 -ml-4 left-0 px-3 py-1 rounded-full opacity-0 flex items-center gap-1 z-50">
+        <div id="firstSystems" className="absolute text-sm md:text-base font-sans bg-teal-300 text-teal-950 shadow-md bottom-0 mb-5 -ml-4 left-0 px-3 py-1 rounded-full opacity-0 hidden md:flex items-center gap-1 z-50">
           <Shapes size={16} strokeWidth={2.5} />
           <span className="inline">
             Software
@@ -65,7 +65,7 @@ export default function Heading() {
         >
           Sistemas
         </span>.
-        <div id="secondSystems" className="absolute text-sm md:text-base font-sans bg-indigo-300 text-indigo-950 shadow-md top-0 mt-10 md:mt-16 right-0 -mr-12 px-3 py-1 rounded-full opacity-0 flex items-center gap-1 z-50 w-max">
+        <div id="secondSystems" className="absolute text-sm md:text-base font-sans bg-indigo-300 text-indigo-950 shadow-md top-0 mt-10 md:mt-16 right-0 -mr-12 px-3 py-1 rounded-full opacity-0 hidden md:flex items-center gap-1 z-50 w-max">
           <Code size={16} strokeWidth={2.5} />
           <span className="inline-flex">
             Frontend/Backend

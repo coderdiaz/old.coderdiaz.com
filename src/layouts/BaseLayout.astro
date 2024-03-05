@@ -17,7 +17,7 @@ const getSlug = (slug: string) => {
   return '/' + slug;
 }
 ---
-<html lang="es">
+<html lang="es" class="md:text-xl">
   <head>
     <SeoHead seo={entry.data.seo} title={entry.data.title}>
       <script defer is:inline>
@@ -60,10 +60,10 @@ const getSlug = (slug: string) => {
           <span class="text-2xl md:text-3xl uppercase font-semibold tracking-widest ml-1">Aplicaciones móviles ✦</span>
         </Marquee>
         <Container>
-          <div class="grid md:grid-cols-2 gap-12 md:gap-0 z-10">
+          <div class="grid md:grid-cols-2 gap-12 md:gap-12 z-10">
             <div class="flex flex-col gap-4 text-white">
               <span class="font-medium text-lg text-black">Servicios</span>
-              <h2 class="text-5xl font-display text-orange-950/80 md:w-[20rem] lg:w-[24rem] mb-6">
+              <h2 class="text-5xl md:text-4xl lg:text-5xl font-display text-orange-950/80 md:w-[20rem] lg:w-[24rem] mb-6">
                 Llevemos tu <span class="text-black">idea</span> de <span class="text-black">0 → 1</span>
               </h2>
               <a href="mailto:hola@coderdiaz.com" class="border-2 border-black font-medium w-max text-black rounded-full text-xl px-6 py-3 bg-white hover:bg-white/85 transition-colors duration-300">

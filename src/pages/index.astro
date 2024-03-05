@@ -7,8 +7,8 @@ import Project from '@/components/Project.astro';
 import Article from '@/components/Article.astro';
 import Heading from '@/components/Heading';
 import { cn } from '@/lib/utils';
-import Family from '@/assets/images/Family@3x.png';
-import Working from '@/assets/images/Working@3x.png';
+import Family from '@/assets/images/Family@2x.png';
+import Working from '@/assets/images/Working@2x.png';
 
 const work =  await getCollection('work');
 const posts = (await getCollection('posts')).sort(
@@ -46,18 +46,18 @@ const entry = await getEntry('pages', 'homepage');
       </div>
     </Container>
   </section>
-  <section class="pt-8 pb-12 md:py-20 md:pb-28 overflow-hidden">
+  <section class="pt-8 pb-12 md:pt-20 md:pb-10 lg:pb-28 overflow-hidden">
     <Container>
       <div class="grid lg:grid-cols-2 gap-16 md:gap-32 items-center justify-center">
-        <div class="lg:aspect-square h-72 lg:h-auto relative">
-        <div class="hidden md:block absolute top-0 bottom-0 left-0 right-0 w-[16rem] z-10 -rotate-6 translate-x-80 lg:translate-x-52 lg:translate-y-8">
+        <div class="lg:aspect-square h-72 lg:h-auto relative order-2 md:order-1">
+        <div class="hidden md:block absolute top-0 bottom-0 left-0 right-0 w-[16rem] z-10 -rotate-6 translate-x-80 lg:translate-x-32 xl:translate-x-64 lg:-translate-y-10 xl:translate-y-8">
             <Image src={Family} alt="De visita por Teotihuacan con mi esposa" />
           </div>
-          <div class="absolute top-0 bottom-0 left-0 right-0 w-[24rem] z-0 md:-translate-x-12 md:translate-y-20 lg:-translate-x-10 lg:translate-y-44 rotate-3">
+          <div class="absolute top-0 bottom-0 left-0 right-0 w-full md:w-[24rem] z-0 md:-translate-x-8 md:translate-y-5 lg:-translate-x-10 lg:translate-y-20 xl:translate-y-44 md:rotate-3">
             <Image src={Working} width={480} alt="Javier Diaz trabajando desde su espacio creativo en casa" />
           </div>
         </div>
-        <div class="text-white font-medium text-xl flex flex-col gap-5 relative w-full md:w-[34rem] lg:w-full">
+        <div class="text-white font-medium text-xl flex flex-col gap-5 relative w-full md:w-[34rem] lg:w-full order-1 md:order-2">
           <p>Soy un freelancer multidisciplinario trabajando desde la <span class="text-[#FFA36F]">Ciudad de México, México</span>. He invertido los últimos 9+ años colaborando con early-startups a desarrollar sus productos tecnológicos, sitios web, apps e interfaces.</p>
           <span class="absolute -left-16 top-0 mt-20 mb-0 hidden font-mono text-[10rem] text-white leading-none opacity-5 lg:flex">*</span>
           <p>
