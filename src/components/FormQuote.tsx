@@ -35,7 +35,7 @@ export const FormQuote = () => {
   }, [projectType]);
 
   return (
-    <form ref={formRef} onSubmit={submit} className="flex flex-col gap-6">
+    <form ref={formRef} onSubmit={submit} className="flex flex-col gap-6 pb-12">
       <div className="flex flex-col gap-3">
         <span className="contact-info">Datos de contacto</span>
         <div className="flex flex-col gap-2">
