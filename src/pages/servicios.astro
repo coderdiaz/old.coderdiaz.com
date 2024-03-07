@@ -1,0 +1,143 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Container from '@/components/Container.astro';
+
+const entry = await getEntry('pages', 'servicios');
+---
+<BaseLayout entry={entry}>
+  <section class="pt-16 pb-20">
+    <Container>
+      <div class="relative flex flex-col gap-4 lg:mr-40 mb-24">
+        <span class="text-neutral-400 lg:text-lg">Descubre mi experiencia</span>
+        <h1 class="text-white text-4xl md:text-5xl lg:text-7xl font-bold">
+          +9 años de experiencia creando <span class="relative inline-block z-[9950] text-[#FFB3C0]">software</span> y <span class="relative inline-block z-[9950] text-[#FFA36F]">experiencias</span> que funcionan muy bien.
+        </h1>
+        <span class="absolute left-0 -ml-16 mt-32 top-0 mb-0 hidden font-mono text-[10rem] text-white leading-none opacity-5 lg:flex">
+          *
+        </span>
+      </div>
+      <div class="flex flex-col gap-20">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-20 text-white">
+          <span class="text-xl lg:text-2xl font-semibold text-neutral-400">
+            Stack tecnológico
+          </span>
+          <div class="grid grid-cols-2 gap-10 text-lg">
+            <div class="flex flex-col gap-4">
+              <span>JavaScript</span>
+              <span>React</span>
+              <span>Nest.js</span>
+            </div>
+            <div class="flex flex-col gap-4">
+              <span>TypeScript</span>
+              <span>Go</span>
+              <span>PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 md:gap-20 text-white">
+          <span class="text-xl lg:text-2xl font-semibold text-neutral-400">
+            Otras tecnologías
+          </span>
+          <div class="grid grid-cols-2 gap-10 text-lg">
+            <div class="flex flex-col gap-4">
+              <span>Next.js</span>
+              <span>HTML/CSS</span>
+              <span>Strapi</span>
+              <span>Astro</span>
+              <span>React Native</span>
+            </div>
+            <div class="flex flex-col gap-4">
+              <span>Radix UI</span>
+              <span>SWR + MDX</span>
+              <span>TailwindCSS</span>
+              <span>GraphQL</span>
+              <span>REST API</span>
+            </div>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 md:gap-20 text-white">
+          <span class="text-xl lg:text-2xl font-semibold text-neutral-400">
+            Herramientas
+          </span>
+          <div class="grid grid-cols-2 gap-10 text-lg">
+            <div class="flex flex-col gap-4">
+              <span>Northflank</span>
+              <span>Cloudflare</span>
+              <span>Git</span>
+            </div>
+            <div class="flex flex-col gap-4">
+              <span>Figma</span>
+              <span>Docker</span>
+              <span>VS Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+  <section class="py-10 md:pt-24 md:pb-32">
+    <Container>
+      <div class="flex flex-col gap-10">
+        <p class="text-neutral-200 text-2xl md:text-4xl lg:text-5xl leading-tight font-bold lg:mr-32">
+          Me asocio con emprendedores, founders y equipos para crear estilos visuales con un enfoque en el usuario y software que funciona y se siente bien.
+        </p>
+      </div>
+    </Container>
+  </section>
+  <section class="pt-24 pb-56 md:pb-72">
+    <Container>
+      <div class="grid lg:grid-cols-2 gap-10">
+         <div class="flex flex-col gap-6">
+           <h2 class="text-white text-3xl md:text-4xl font-bold lg:mr-32">
+             Obtén una solución que se adapte a tus necesidades.
+           </h2>
+           <button 
+            data-cal-link="coderdiaz/cuentame-sobre-tu-proyecto"
+            data-cal-namespace="cuentame-sobre-tu-proyecto"
+            data-cal-config='{"layout":"month_view"}'
+            class="border-2 border-black font-medium w-max text-black rounded-full px-6 py-3 bg-white transition-all duration-300 hover:ring-4 hover:ring-[#FFA36F75] focus:outline-none focus:ring-2 focus:ring-[#FFA36F75] hover:scale-95"
+          >
+            Agendar una llamada
+          </button>
+         </div>
+        <div class="flex flex-col gap-12">
+          <div class="flex text-white gap-10">
+            <span class="flex flex-shrink font-semibold text-black bg-[#FFA36F] text-lg w-9 h-9 rounded-full items-center justify-center leading-none">1</span>
+            <div class="flex flex-col gap-2 w-full">
+              <span class="font-semibold text-xl">Envíame un mensaje</span>
+              <p class="text-neutral-400 text-lg">Esta es nuestra primera interacción y aprecio mucho que estes dando el primer paso.</p>
+            </div>
+          </div>
+          <div class="flex text-white gap-10">
+            <span class="flex flex-shrink font-semibold text-black bg-[#FFA36F] text-lg w-9 h-9 rounded-full items-center justify-center leading-none">2</span>
+            <div class="flex flex-col gap-2 w-full">
+              <span class="font-semibold text-xl">Me pondré en contacto contigo</span>
+              <p class="text-neutral-400 text-lg">
+                Aunque me gustaría ser un bot para responder al instante, suelo responder muy rápido, a menos de que este preparandome un sandwich.
+              </p>
+            </div>
+          </div>
+          <div class="flex text-white gap-10">
+            <span class="flex flex-shrink font-semibold text-black bg-[#FFA36F] text-lg w-9 h-9 rounded-full items-center justify-center leading-none">3</span>
+            <div class="flex flex-col gap-2 w-full">
+              <span class="font-semibold text-xl">Kick-off</span>
+              <p class="text-neutral-400 text-lg">
+                Es momento de conocernos mejor, entender tus necesidades y definir el alcance. De esta manera podré preparar una propuesta.
+              </p>
+            </div>
+          </div>
+          <div class="flex text-white gap-10">
+            <span class="flex flex-shrink font-semibold text-black bg-[#FFA36F] text-lg w-9 h-9 rounded-full items-center justify-center leading-none">4</span>
+            <div class="flex flex-col gap-2 w-full">
+              <span class="font-semibold text-xl">Colaboremos</span>
+              <p class="text-neutral-400 text-lg">
+                Este es el principio de algo grande. Hagamos que tu proyecto se vuelva realidad.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>
