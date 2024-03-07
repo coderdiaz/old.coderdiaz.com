@@ -26,7 +26,7 @@ export const Quote = () => {
       }}
       initial={{ display: 'none', opacity: 0, visibility: 'hidden' }}
       animate={open ? 'visible' : 'hidden'}
-      className="fixed flex top-0 left-0 w-full h-full z-[9950] justify-end p-3"
+      className="fixed flex top-0 left-0 w-full h-full z-[9999] justify-end p-3"
     >
       <motion.div
         variants={{

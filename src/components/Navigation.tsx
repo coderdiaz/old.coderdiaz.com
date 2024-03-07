@@ -35,7 +35,7 @@ export const Navigation = () => {
       animate={open ? 'visible' : 'hidden'}
       initial={{ display: 'none', opacity: 0, visibility: 'hidden' }}
       exit={{ display: 'none', opacity: 0, visibility: 'hidden' }}
-      className="fixed top-0 left-0 w-full h-full z-[9950] justify-end p-3"
+      className="fixed top-0 left-0 w-full h-full z-[9999] justify-end p-3"
     >
       <div className="absolute w-full h-full top-0 left-0 bg-black/75" />
       <motion.div
@@ -59,7 +59,7 @@ export const Navigation = () => {
             <nav className="flex flex-col gap-2">
               <a href="/" className="text-white font-semibold text-xl">Inicio</a>
               <a href="/jardin/" className="text-white font-semibold text-xl">Jardín Digital</a>
-              {/* <a href="#" className="text-white font-semibold text-xl">Sobre mí</a> */}
+              <a href="/servicios/" className="text-white font-semibold text-xl">Servicios</a>
               {/* <a href="#" className="text-white font-semibold text-xl">Proyectos</a> */}
             </nav>
           </div>
