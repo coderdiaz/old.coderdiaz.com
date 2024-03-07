@@ -25,7 +25,7 @@ export const MotionHeader = ({ children }: HeaderProps) => {
       }}
       transition={{ ease: 'easeIn', duration: .3 }}
       animate={hidden ? 'hidden' : 'visible'}
-      className="py-4 sticky top-0 z-50 bg-[#100F0F]/80 backdrop-blur-md"
+      className="py-4 sticky top-0 z-[9999] bg-[#100F0F]/80 backdrop-blur-md"
     >
       {children}
     </motion.header>

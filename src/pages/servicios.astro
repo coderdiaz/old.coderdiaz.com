@@ -6,89 +6,125 @@ import Container from '@/components/Container.astro';
 const entry = await getEntry('pages', 'servicios');
 ---
 <BaseLayout entry={entry}>
-  <section class="pt-16 pb-20">
+  <section class="pt-16 md:pb-6">
     <Container>
-      <div class="relative flex flex-col gap-4 lg:mr-40 mb-24">
+      <div class="relative flex flex-col gap-4 lg:mr-40 mb-16 md:mb-24">
         <span class="text-neutral-400 lg:text-lg">Descubre mi experiencia</span>
         <h1 class="text-white text-4xl md:text-5xl lg:text-7xl font-bold">
           +9 años de experiencia creando <span class="relative inline-block z-[9950] text-[#FFB3C0]">software</span> y <span class="relative inline-block z-[9950] text-[#FFA36F]">experiencias</span> que funcionan muy bien.
         </h1>
-        <span class="absolute left-0 -ml-16 mt-32 top-0 mb-0 hidden font-mono text-[10rem] text-white leading-none opacity-5 lg:flex">
-          *
-        </span>
+        <span class="absolute left-0 -ml-16 mt-32 top-0 mb-0 hidden font-mono text-[10rem] text-white leading-none opacity-5 lg:flex">*</span>
       </div>
-      <div class="flex flex-col gap-20">
-        <div class="grid md:grid-cols-2 gap-8 md:gap-20 text-white">
-          <span class="text-xl lg:text-2xl font-semibold text-neutral-400">
-            Stack tecnológico
-          </span>
-          <div class="grid grid-cols-2 gap-10 text-lg">
-            <div class="flex flex-col gap-4">
-              <span>JavaScript</span>
-              <span>React</span>
-              <span>Nest.js</span>
+    </Container>
+  </section>
+  <section class="border-y border-stone-800">
+    <Container>
+      <div class="grid md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-stone-800 text-white">
+        <div class="flex flex-col gap-8 py-8 lg:py-12">
+          <h2 class="text-xl lg:text-2xl font-semibold text-neutral-400">Diseño y estrategía</h2>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-xl text-white font-medium">Interfaces</h3>
+            <div class="flex flex-col gap-1 text-white">
+              <span class="text-lg text-neutral-400">Diseño de interfaces de usuario</span>
+              <span class="text-lg text-neutral-400">Sistemas de Diseño</span>
+              <span class="text-lg text-neutral-400">Diseño de experiencia de usuario</span>
             </div>
-            <div class="flex flex-col gap-4">
-              <span>TypeScript</span>
-              <span>Go</span>
-              <span>PostgreSQL</span>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-xl text-white font-medium">Producto</h3>
+            <div class="flex flex-col gap-1 text-white">
+              <span class="text-lg text-neutral-400">Prueba de concepto</span>
+              <span class="text-lg text-neutral-400">MVP</span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-xl text-white font-medium">Descubrimiento</h3>
+            <div class="flex flex-col gap-1 text-white">
+              <span class="text-lg text-neutral-400">Benchmarking</span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-xl text-white font-medium">Operación</h3>
+            <div class="flex flex-col gap-1 text-white">
+              <span class="text-lg text-neutral-400">Gestión de proyectos</span>
+            </div>
+          </div>
+          <h2 class="text-xl lg:text-2xl font-semibold text-neutral-400 mt-6">Otros servicios</h2>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-xl text-white font-medium">Crecimiento</h3>
+            <div class="flex flex-col gap-1 text-white">
+              <span class="text-lg text-neutral-400">Mentorías privadas</span>
+              <span class="text-lg text-neutral-400">Revisión de portafolio</span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-xl text-white font-medium">Consultas</h3>
+            <div class="flex flex-col gap-1 text-white">
+              <span class="text-lg text-neutral-400">Consultorías técnicas</span>
+              <span class="text-lg text-neutral-400">Consultoría de diseño</span>
             </div>
           </div>
         </div>
-        <div class="grid md:grid-cols-2 gap-8 md:gap-20 text-white">
-          <span class="text-xl lg:text-2xl font-semibold text-neutral-400">
-            Otras tecnologías
-          </span>
-          <div class="grid grid-cols-2 gap-10 text-lg">
-            <div class="flex flex-col gap-4">
-              <span>Next.js</span>
-              <span>HTML/CSS</span>
-              <span>Strapi</span>
-              <span>Astro</span>
-              <span>React Native</span>
-            </div>
-            <div class="flex flex-col gap-4">
-              <span>Radix UI</span>
-              <span>SWR + MDX</span>
-              <span>TailwindCSS</span>
-              <span>GraphQL</span>
-              <span>REST API</span>
+        <div class="flex flex-col gap-8 md:px-8 lg:px-20 py-8 lg:py-12">
+          <h2 class="text-xl lg:text-2xl font-semibold text-neutral-400">Desarrollo de software</h2>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-xl text-white font-medium">Frontend</h3>
+            <div class="flex flex-col gap-1 text-white">
+              <span class="text-lg text-neutral-400">React</span>
+              <span class="text-lg text-neutral-400">Next.js</span>
+              <span class="text-lg text-neutral-400">React Native</span>
+              <span class="text-lg text-neutral-400">Astro</span>
+              <span class="text-lg text-neutral-400">TailwindCSS</span>
+              <span class="text-lg text-neutral-400">HTML/CSS</span>
             </div>
           </div>
-        </div>
-        <div class="grid md:grid-cols-2 gap-8 md:gap-20 text-white">
-          <span class="text-xl lg:text-2xl font-semibold text-neutral-400">
-            Herramientas
-          </span>
-          <div class="grid grid-cols-2 gap-10 text-lg">
-            <div class="flex flex-col gap-4">
-              <span>Northflank</span>
-              <span>Cloudflare</span>
-              <span>Git</span>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-xl text-white font-medium">Backend</h3>
+            <div class="flex flex-col gap-1 text-white">
+              <span class="text-lg text-neutral-400">Node</span>
+              <span class="text-lg text-neutral-400">Nest.js</span>
+              <span class="text-lg text-neutral-400">GraphQL</span>
+              <span class="text-lg text-neutral-400">REST API</span>
+              <span class="text-lg text-neutral-400">Strapi CMS</span>
+              <span class="text-lg text-neutral-400">PayloadCMS</span>
+              <span class="text-lg text-neutral-400">Medusa</span>
             </div>
-            <div class="flex flex-col gap-4">
-              <span>Figma</span>
-              <span>Docker</span>
-              <span>VS Code</span>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-xl text-white font-medium">Lenguajes</h3>
+            <div class="flex flex-col gap-1 text-white">
+              <span class="text-lg text-neutral-400">JavaScript</span>
+              <span class="text-lg text-neutral-400">TypeScript</span>
+              <span class="text-lg text-neutral-400">Go</span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-xl text-white font-medium">DevOps</h3>
+            <div class="flex flex-col gap-1 text-white">
+              <span class="text-lg text-neutral-400">Docker</span>
+              <span class="text-lg text-neutral-400">Northflank</span>
+              <span class="text-lg text-neutral-400">Cloudflare</span>
+              <span class="text-lg text-neutral-400">Git</span>
             </div>
           </div>
         </div>
       </div>
     </Container>
   </section>
-  <section class="py-10 md:pt-24 md:pb-32">
+  <section class="py-10 md:pt-24 md:pb-28 border-b border-stone-800">
     <Container>
-      <div class="flex flex-col gap-10">
+      <div class="flex flex-col gap-10 relative">
         <p class="text-neutral-200 text-2xl md:text-4xl lg:text-5xl leading-tight font-bold lg:mr-32">
           Me asocio con emprendedores, founders y equipos para crear estilos visuales con un enfoque en el usuario y software que funciona y se siente bien.
         </p>
+        <span class="absolute left-0 -ml-16 mt-16 top-0 mb-0 hidden font-mono text-[10rem] text-white leading-none opacity-5 lg:flex">*</span>
       </div>
     </Container>
   </section>
-  <section class="pt-24 pb-56 md:pb-72">
+  <section class="pt-16 md:pt-24 pb-56 md:pb-64">
     <Container>
       <div class="grid lg:grid-cols-2 gap-10">
-         <div class="flex flex-col gap-6">
+         <div class="flex flex-col gap-8">
            <h2 class="text-white text-3xl md:text-4xl font-bold lg:mr-32">
              Obtén una solución que se adapte a tus necesidades.
            </h2>
@@ -103,14 +139,14 @@ const entry = await getEntry('pages', 'servicios');
          </div>
         <div class="flex flex-col gap-12">
           <div class="flex text-white gap-10">
-            <span class="flex flex-shrink font-semibold text-black bg-[#FFA36F] text-lg w-9 h-9 rounded-full items-center justify-center leading-none">1</span>
+            <span class="flex flex-shrink font-semibold text-black bg-[#FFA36F] text-lg w-11 h-9 rounded-full items-center justify-center leading-none">1</span>
             <div class="flex flex-col gap-2 w-full">
               <span class="font-semibold text-xl">Envíame un mensaje</span>
               <p class="text-neutral-400 text-lg">Esta es nuestra primera interacción y aprecio mucho que estes dando el primer paso.</p>
             </div>
           </div>
           <div class="flex text-white gap-10">
-            <span class="flex flex-shrink font-semibold text-black bg-[#FFA36F] text-lg w-9 h-9 rounded-full items-center justify-center leading-none">2</span>
+            <span class="flex flex-shrink font-semibold text-black bg-[#FFA36F] text-lg w-11 h-9 rounded-full items-center justify-center leading-none">2</span>
             <div class="flex flex-col gap-2 w-full">
               <span class="font-semibold text-xl">Me pondré en contacto contigo</span>
               <p class="text-neutral-400 text-lg">
@@ -119,7 +155,7 @@ const entry = await getEntry('pages', 'servicios');
             </div>
           </div>
           <div class="flex text-white gap-10">
-            <span class="flex flex-shrink font-semibold text-black bg-[#FFA36F] text-lg w-9 h-9 rounded-full items-center justify-center leading-none">3</span>
+            <span class="flex flex-shrink font-semibold text-black bg-[#FFA36F] text-lg w-11 h-9 rounded-full items-center justify-center leading-none">3</span>
             <div class="flex flex-col gap-2 w-full">
               <span class="font-semibold text-xl">Kick-off</span>
               <p class="text-neutral-400 text-lg">
@@ -128,7 +164,7 @@ const entry = await getEntry('pages', 'servicios');
             </div>
           </div>
           <div class="flex text-white gap-10">
-            <span class="flex flex-shrink font-semibold text-black bg-[#FFA36F] text-lg w-9 h-9 rounded-full items-center justify-center leading-none">4</span>
+            <span class="flex flex-shrink font-semibold text-black bg-[#FFA36F] text-lg w-11 h-9 rounded-full items-center justify-center leading-none">4</span>
             <div class="flex flex-col gap-2 w-full">
               <span class="font-semibold text-xl">Colaboremos</span>
               <p class="text-neutral-400 text-lg">
