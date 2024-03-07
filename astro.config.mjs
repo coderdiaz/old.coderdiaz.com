@@ -3,7 +3,7 @@ import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
-import vercel from '@astrojs/vercel/serverless';
+import vercel from '@astrojs/vercel/static';
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,7 +16,7 @@ export default defineConfig({
     service: sharpImageService(),
   },
   trailingSlash: 'always',
-  output: 'hybrid',
+  output: 'static',
   adapter: vercel({ imageService: true }),
   integrations: [react(), tailwind(), sitemap(), mdx()],
   redirects: {
