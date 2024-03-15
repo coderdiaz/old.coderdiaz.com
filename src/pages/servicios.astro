@@ -1,4 +1,5 @@
 ---
+import { motion } from 'framer-motion';
 import { getEntry } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Container from '@/components/Container.astro';
@@ -6,18 +7,30 @@ import Container from '@/components/Container.astro';
 const entry = await getEntry('pages', 'servicios');
 ---
 <BaseLayout entry={entry}>
-  <section class="pt-16 md:pb-6">
+  <section class="pt-16 md:pt-20 md:pb-4">
     <Container>
-      <div class="relative flex flex-col gap-4 lg:mr-40 mb-16 md:mb-24">
+      <motion.div
+        client:load
+        initial={{ opacity: 0, y: 44 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.1 }}
+        className="relative flex flex-col gap-4 lg:mr-40 mb-16 md:mb-24"
+      >
         <span class="text-neutral-400 lg:text-lg">Descubre mi experiencia</span>
         <h1 class="text-white text-4xl md:text-5xl lg:text-7xl font-bold">
           +9 años de experiencia creando <span class="relative inline-block z-[9950] text-[#FFB3C0]">software</span> y <span class="relative inline-block z-[9950] text-[#FFA36F]">experiencias</span> que funcionan muy bien.
         </h1>
         <span class="absolute left-0 -ml-16 mt-32 top-0 mb-0 hidden font-mono text-[10rem] text-white leading-none opacity-5 lg:flex">*</span>
-      </div>
+      </motion.div>
     </Container>
   </section>
-  <section class="border-y border-stone-800">
+  <motion.section
+    client:load
+    initial={{ opacity: 0, y: 44 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, delay: 0.3 }}
+    className="border-y border-stone-800"
+  >
     <Container>
       <div class="grid md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-stone-800 text-white">
         <div class="flex flex-col gap-8 py-8 lg:py-12">
@@ -110,7 +123,7 @@ const entry = await getEntry('pages', 'servicios');
         </div>
       </div>
     </Container>
-  </section>
+  </motion.section>
   <section class="py-10 md:pt-24 md:pb-28 border-b border-stone-800">
     <Container>
       <div class="flex flex-col gap-10 relative">

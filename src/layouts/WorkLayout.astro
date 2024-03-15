@@ -1,6 +1,7 @@
 ---
 import '@/styles/roobert.css';
 import { Image } from 'astro:assets';
+import { motion } from 'framer-motion';
 import { Quote } from '@/components/Quote';
 import { Navigation } from '@/components/Navigation';
 import Container from '@/components/Container.astro';
@@ -26,14 +27,32 @@ const { entry } = Astro.props;
       <section class="pt-0 pb-20">
         <Container>
           <article>
-            <div class="w-full h-full bg-white my-8 rounded-2xl overflow-hidden aspect-auto">
+            <motion.div
+              client:load
+              initial={{ opacity: 0, y: 44 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="w-full h-full bg-white my-8 rounded-2xl overflow-hidden aspect-auto"
+            >
               <Image class="object-cover w-full h-full" src={entry.data.featuredImage} alt={entry.data.title} />
-            </div>
-            <div class="flex flex-col gap-3 text-white md:px-0 lg:px-10 xl:px-20 mb-6 md:mb-14">
+            </motion.div>
+            <motion.div
+              client:load
+              initial={{ opacity: 0, y: 44 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex flex-col gap-3 text-white md:px-0 lg:px-10 xl:px-20 mb-6 md:mb-14"
+            >
               <span class="text-lg text-[#FFA36F]">{entry.data.client}</span>
               <h1 class="text-3xl md:text-4xl font-display font-semibold text-balance">{entry.data.title}</h1>
-            </div>
-            <div class="md:px-0 lg:px-10 xl:px-20 grid lg:grid-cols-7 gap-8 md:gap-4">
+            </motion.div>
+            <motion.div
+              client:load
+              initial={{ opacity: 0, y: 44 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="md:px-0 lg:px-10 xl:px-20 grid lg:grid-cols-7 gap-8 md:gap-4"
+            >
               <div class="lg:col-span-2 order-2 lg:order-1">
                 <div class="flex flex-col gap-6 sticky top-10">
                   <div class="flex flex-col gap-2 text-white text-lg">
@@ -63,7 +82,7 @@ const { entry } = Astro.props;
                   <slot />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </article>
         </Container>
       </section>

@@ -1,6 +1,7 @@
 ---
 import '@/styles/roobert.css';
 import { Image } from 'astro:assets';
+import { motion } from 'framer-motion';
 import { Navigation } from '@/components/Navigation';
 import { Quote } from '@/components/Quote';
 import Container from '@/components/Container.astro';
@@ -26,7 +27,13 @@ const { entry } = Astro.props;
       <Container>
         <article class="pt-16 pb-24 md:pb-40">
           <div class="flex flex-col gap-8">
-            <div class="flex flex-col md:px-8 lg:px-40 gap-4 text-white">
+            <motion.div
+              client:load
+              initial={{ opacity: 0, y: 44 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex flex-col md:px-8 lg:px-40 gap-4 text-white"
+            >
               <h1 class="text-3xl md:text-4xl font-semibold font-display">
                 {entry.data.title}
               </h1>
@@ -37,13 +44,25 @@ const { entry } = Astro.props;
                   day: 'numeric',
                 })}
               </time>
-            </div>
-            <div class="w-full h-full my-1 rounded-2xl overflow-hidden">
+            </motion.div>
+            <motion.div
+              client:load
+              initial={{ opacity: 0, y: 44 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="w-full lg:w-[50rem] mx-auto h-full mt-1 lg:my-1 rounded-2xl overflow-hidden"
+            >
               <Image class="object-cover" src={entry.data.featuredImage} alt={entry.data.title} />
-            </div>
-            <div class="mx-auto prose prose-invert prose-stone">
+            </motion.div>
+            <motion.div
+              client:load
+              initial={{ opacity: 0, y: 44 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="mx-auto -mt-2 md:mt-0 prose prose-invert prose-stone"
+            >
               <slot />
-            </div>
+            </motion.div>
           </div>
         </article>
       </Container>
