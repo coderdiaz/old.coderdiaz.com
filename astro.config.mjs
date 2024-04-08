@@ -1,52 +1,53 @@
-import { defineConfig, sharpImageService } from 'astro/config';
-import react from '@astrojs/react';
-import tailwind from '@astrojs/tailwind';
-import sitemap from '@astrojs/sitemap';
-import mdx from '@astrojs/mdx';
-import vercel from '@astrojs/vercel/static';
+import { defineConfig, sharpImageService } from "astro/config";
+import react from "@astrojs/react";
+import tailwind from "@astrojs/tailwind";
+import sitemap from "@astrojs/sitemap";
+import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://coderdiaz.com',
+  site: "https://coderdiaz.com",
   image: {
-    domains: ['*.coderdiaz.com'],
+    domains: ["*.coderdiaz.com"],
     remotePatterns: [
-      { protocol: 'https', hostname: '**.coderdiaz.com'},
+      {
+        protocol: "https",
+        hostname: "**.coderdiaz.com",
+      },
     ],
     service: sharpImageService(),
   },
-  trailingSlash: 'always',
-  output: 'static',
-  adapter: vercel({ imageService: true }),
+  trailingSlash: "always",
+  output: "static",
   integrations: [react(), tailwind(), sitemap(), mdx()],
   redirects: {
-    '/garden/como-he-construido-mi-sitio-web-con-nextjs': {
+    "/garden/como-he-construido-mi-sitio-web-con-nextjs": {
       status: 301,
-      destination: '/'
+      destination: "/",
     },
-    '/garden/actualizacion-octubre': {
+    "/garden/actualizacion-octubre": {
       status: 301,
-      destination: '/jardin/actualizacion-octubre-2023/'
+      destination: "/jardin/actualizacion-octubre-2023/",
     },
-    '/garden/2021-en-retrospectiva': {
+    "/garden/2021-en-retrospectiva": {
       status: 301,
-      destination: '/jardin/2021-en-retrospectiva'
+      destination: "/jardin/2021-en-retrospectiva",
     },
-    '/academia-baile-aria': {
+    "/academia-baile-aria": {
       status: 301,
-      destination: '/academia-de-baile-aria'
+      destination: "/academia-de-baile-aria",
     },
-    '/crossfit-quiniela': {
+    "/crossfit-quiniela": {
       status: 301,
-      destination: '/'
+      destination: "/",
     },
-    '/expanish-post': {
+    "/expanish-post": {
       status: 301,
-      destination: '/'
+      destination: "/",
     },
-    '/expanish-sitio-web': {
+    "/expanish-sitio-web": {
       status: 301,
-      destination: '/web-expanish'
-    }
-  }
+      destination: "/web-expanish",
+    },
+  },
 });
